@@ -9,13 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            List {
+                Section {
+                    NavigationLink(destination: AgeView()) {
+                        Text("Age")
+                    }
+                    NavigationLink(destination: DayView()) {
+                        Text("Day")
+                    }
+                    NavigationLink(destination: TimeView()) {
+                        Text("Time")
+                    }
+                    NavigationLink(destination: WeekdayView()) {
+                        Text("Weekday")
+                    }
+                } header: {
+                    Text("Components")
+                }
+            }
+            .listStyle(InsetGroupedListStyle())
+            .navigationTitle("Liquid Crystal Display")
         }
-        .padding()
     }
 }
 
