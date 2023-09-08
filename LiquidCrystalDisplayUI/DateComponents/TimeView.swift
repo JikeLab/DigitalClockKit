@@ -16,13 +16,13 @@ struct TimeView: View {
 
     var body: some View {
         HStack {
-            NumberView(value: hour)
+            NumberView(value: hour, numberOfDigits: nil)
             DividerView(dividerType: .colon)
-            NumberView(value: minute)
+            NumberView(value: minute, numberOfDigits: 2)
             DividerView(dividerType: .space)
-            NumberView(value: second)
+            NumberView(value: second, numberOfDigits: 2)
             DividerView(dividerType: .period)
-            NumberView(value: miliSecond)
+            NumberView(value: miliSecond, numberOfDigits: 2)
         }.onReceive(timer){ _ in
             self.hour = Calendar.current.component(.hour, from: Date())
             self.minute = Calendar.current.component(.minute, from: Date())
@@ -33,8 +33,8 @@ struct TimeView: View {
 }
 
 #Preview {
-    TimeView(hour: 12,
-             minute: 34,
-             second: 56,
-             miliSecond: 0)
+    TimeView(hour: 1,
+             minute: 23,
+             second: 45,
+             miliSecond: 67)
 }

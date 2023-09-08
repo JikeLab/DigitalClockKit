@@ -13,6 +13,9 @@
 		085A63F62AA6C703000B5DA6 /* AgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085A63F02AA6C703000B5DA6 /* AgeView.swift */; };
 		085A63F72AA6C703000B5DA6 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085A63F12AA6C703000B5DA6 /* TimeView.swift */; };
 		085A63F82AA6C703000B5DA6 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085A63F22AA6C703000B5DA6 /* DayView.swift */; };
+		085A63FD2AA740FB000B5DA6 /* DigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085A63FC2AA740FB000B5DA6 /* DigitView.swift */; };
+		085A63FF2AAB090E000B5DA6 /* MatrixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085A63FE2AAB090E000B5DA6 /* MatrixView.swift */; };
+		085A64012AAB2177000B5DA6 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085A64002AAB2177000B5DA6 /* Coordinate.swift */; };
 		08EEA3A72A9205310086826E /* LiquidCrystalDisplayUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EEA3A62A9205310086826E /* LiquidCrystalDisplayUIApp.swift */; };
 		08EEA3A92A9205310086826E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EEA3A82A9205310086826E /* ContentView.swift */; };
 		08EEA3AB2A9205350086826E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08EEA3AA2A9205350086826E /* Assets.xcassets */; };
@@ -26,6 +29,9 @@
 		085A63F02AA6C703000B5DA6 /* AgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeView.swift; sourceTree = "<group>"; };
 		085A63F12AA6C703000B5DA6 /* TimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		085A63F22AA6C703000B5DA6 /* DayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		085A63FC2AA740FB000B5DA6 /* DigitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitView.swift; sourceTree = "<group>"; };
+		085A63FE2AAB090E000B5DA6 /* MatrixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixView.swift; sourceTree = "<group>"; };
+		085A64002AAB2177000B5DA6 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		08EEA3A32A9205310086826E /* LiquidCrystalDisplayUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiquidCrystalDisplayUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08EEA3A62A9205310086826E /* LiquidCrystalDisplayUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidCrystalDisplayUIApp.swift; sourceTree = "<group>"; };
 		08EEA3A82A9205310086826E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,14 +54,24 @@
 		085A63EC2AA6C703000B5DA6 /* DateComponents */ = {
 			isa = PBXGroup;
 			children = (
-				085A63ED2AA6C703000B5DA6 /* DividerView.swift */,
-				085A63EE2AA6C703000B5DA6 /* NumberView.swift */,
-				085A63EF2AA6C703000B5DA6 /* WeekdayView.swift */,
 				085A63F02AA6C703000B5DA6 /* AgeView.swift */,
-				085A63F12AA6C703000B5DA6 /* TimeView.swift */,
 				085A63F22AA6C703000B5DA6 /* DayView.swift */,
+				085A63F12AA6C703000B5DA6 /* TimeView.swift */,
+				085A63EF2AA6C703000B5DA6 /* WeekdayView.swift */,
 			);
 			path = DateComponents;
+			sourceTree = "<group>";
+		};
+		085A63F92AA7247D000B5DA6 /* CoreComponents */ = {
+			isa = PBXGroup;
+			children = (
+				085A64002AAB2177000B5DA6 /* Coordinate.swift */,
+				085A63EE2AA6C703000B5DA6 /* NumberView.swift */,
+				085A63FC2AA740FB000B5DA6 /* DigitView.swift */,
+				085A63ED2AA6C703000B5DA6 /* DividerView.swift */,
+				085A63FE2AAB090E000B5DA6 /* MatrixView.swift */,
+			);
+			path = CoreComponents;
 			sourceTree = "<group>";
 		};
 		08EEA39A2A9205310086826E = {
@@ -79,6 +95,7 @@
 			children = (
 				08EEA3A62A9205310086826E /* LiquidCrystalDisplayUIApp.swift */,
 				08EEA3A82A9205310086826E /* ContentView.swift */,
+				085A63F92AA7247D000B5DA6 /* CoreComponents */,
 				085A63EC2AA6C703000B5DA6 /* DateComponents */,
 				08EEA3AA2A9205350086826E /* Assets.xcassets */,
 				08EEA3AC2A9205350086826E /* LiquidCrystalDisplayUI.entitlements */,
@@ -165,10 +182,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				085A63FD2AA740FB000B5DA6 /* DigitView.swift in Sources */,
 				08EEA3A92A9205310086826E /* ContentView.swift in Sources */,
 				085A63F82AA6C703000B5DA6 /* DayView.swift in Sources */,
 				085A63F72AA6C703000B5DA6 /* TimeView.swift in Sources */,
 				085A63F52AA6C703000B5DA6 /* WeekdayView.swift in Sources */,
+				085A64012AAB2177000B5DA6 /* Coordinate.swift in Sources */,
+				085A63FF2AAB090E000B5DA6 /* MatrixView.swift in Sources */,
 				085A63F62AA6C703000B5DA6 /* AgeView.swift in Sources */,
 				085A63F32AA6C703000B5DA6 /* DividerView.swift in Sources */,
 				08EEA3A72A9205310086826E /* LiquidCrystalDisplayUIApp.swift in Sources */,

@@ -10,13 +10,13 @@ import SwiftUI
 struct DayView: View {
     let month: Int = Calendar.current.component(.month, from: Date())
     let day: Int = Calendar.current.component(.day, from: Date())
-    let divider: DividerView.DividerType = .hyphn
+    let divider: DividerType = .hyphn
 
     var body: some View {
         HStack {
-            NumberView(value: month)
+            NumberView(value: month, numberOfDigits: nil)
             DividerView(dividerType: divider)
-            NumberView(value: day)
+            NumberView(value: day, numberOfDigits: nil)
         }
     }
 }

@@ -25,7 +25,25 @@ struct ContentView: View {
                         Text("Weekday")
                     }
                 } header: {
-                    Text("Components")
+                    Text("DATE COMPONENTS")
+                }
+                Section {
+                    ZStack {
+                        VStack {
+                            HStack {
+                                AgeView()
+                                DividerView(dividerType: .space)
+                                DayView()
+                                DividerView(dividerType: .space)
+                                WeekdayView()
+                            }
+                            TimeView()
+                        }
+                        .padding()
+                    }
+                    .background(Color(red: (194 / 255), green: (216 / 255), blue: (214 / 255)))
+                } header: {
+                    Text("SAMPLE CLOCK")
                 }
             }
             .listStyle(InsetGroupedListStyle())

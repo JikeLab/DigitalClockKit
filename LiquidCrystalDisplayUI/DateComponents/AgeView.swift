@@ -11,7 +11,7 @@ struct AgeView: View {
     let year: Int = Calendar.current.component(.year, from: Date())
 
     var body: some View {
-        NumberView(value: year)
+        NumberView(value: year, numberOfDigits: 2)
     }
 }
 
