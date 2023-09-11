@@ -7,6 +7,8 @@
 
 import Foundation
 
+let defaultComponentSize = CGSize(width: 18, height: 30)
+
 struct Coordinate: Equatable {
     let x: Int
     let y: Int

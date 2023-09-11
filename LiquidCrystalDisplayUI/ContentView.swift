@@ -12,16 +12,16 @@ struct ContentView: View {
         NavigationView {
             List {
                 Section {
-                    NavigationLink(destination: AgeView()) {
+                    NavigationLink(destination: AgeView(componentSize: nil)) {
                         Text("Age")
                     }
-                    NavigationLink(destination: DayView()) {
+                    NavigationLink(destination: DayView(componentSize: nil)) {
                         Text("Day")
                     }
-                    NavigationLink(destination: TimeView()) {
+                    NavigationLink(destination: TimeView(componentSize: nil)) {
                         Text("Time")
                     }
-                    NavigationLink(destination: WeekdayView()) {
+                    NavigationLink(destination: WeekdayView(componentSize: nil)) {
                         Text("Weekday")
                     }
                 } header: {
@@ -31,13 +31,13 @@ struct ContentView: View {
                     ZStack {
                         VStack {
                             HStack {
-                                AgeView()
-                                DividerView(dividerType: .space)
-                                DayView()
-                                DividerView(dividerType: .space)
-                                WeekdayView()
+                                AgeView(componentSize: nil)
+                                DividerView(dividerType: .space, componentSize: nil)
+                                DayView(componentSize: nil)
+                                DividerView(dividerType: .space, componentSize: nil)
+                                WeekdayView(componentSize: nil)
                             }
-                            TimeView()
+                            TimeView(componentSize: nil)
                         }
                         .padding()
                     }

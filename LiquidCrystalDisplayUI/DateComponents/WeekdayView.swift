@@ -86,12 +86,13 @@ enum WeekdayType: Int {
 }
 
 struct WeekdayView: View {
-    
+
+    let componentSize: CGSize?
     let weekdayType = WeekdayType(rawValue: Calendar.current.component(.weekday, from: Date()))
 
     var body: some View {
         if let weekdayType {
-            WeekdayContentView(weekdayType: weekdayType)
+            WeekdayContentView(weekdayType: weekdayType, componentSize: componentSize ?? defaultComponentSize)
         }
     }
 }
@@ -99,11 +100,12 @@ struct WeekdayView: View {
 struct WeekdayContentView: View {
 
     let weekdayType: WeekdayType
+    let componentSize: CGSize
 
     var body: some View {
         HStack {
             ForEach(weekdayType.coordinateGrid, id: \.self) { coordinates in
-                MatrixView(coordinates: coordinates, width: 18, height: 30, color: Color.black, margin: 1)
+                MatrixView(coordinates: coordinates, componentSize: componentSize, color: Color.black, margin: 1)
             }
         }
         
@@ -112,12 +114,12 @@ struct WeekdayContentView: View {
 
 #Preview {
     VStack {
-        WeekdayContentView(weekdayType: .sunday)
-        WeekdayContentView(weekdayType: .monday)
-        WeekdayContentView(weekdayType: .tuesday)
-        WeekdayContentView(weekdayType: .wednesday)
-        WeekdayContentView(weekdayType: .thursday)
-        WeekdayContentView(weekdayType: .friday)
-        WeekdayContentView(weekdayType: .saturday)
+        WeekdayContentView(weekdayType: .sunday, componentSize: defaultComponentSize)
+        WeekdayContentView(weekdayType: .monday, componentSize: defaultComponentSize)
+        WeekdayContentView(weekdayType: .tuesday, componentSize: defaultComponentSize)
+        WeekdayContentView(weekdayType: .wednesday, componentSize: defaultComponentSize)
+        WeekdayContentView(weekdayType: .thursday, componentSize: defaultComponentSize)
+        WeekdayContentView(weekdayType: .friday, componentSize: defaultComponentSize)
+        WeekdayContentView(weekdayType: .saturday, componentSize: defaultComponentSize)
     }
 }

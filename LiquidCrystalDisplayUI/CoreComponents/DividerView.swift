@@ -30,19 +30,20 @@ enum DividerType {
 struct DividerView: View {
 
     let dividerType: DividerType
+    let componentSize: CGSize?
 
     var body: some View {
         ZStack {
-            MatrixView(coordinates: dividerType.coordinates, width: 18, height: 30, color: Color.black, margin: 1)
+            MatrixView(coordinates: dividerType.coordinates, componentSize: componentSize ?? defaultComponentSize, color: Color.black, margin: 1)
         }
     }
 }
 
 #Preview {
     HStack {
-        DividerView(dividerType: .colon)
-        DividerView(dividerType: .period)
-        DividerView(dividerType: .hyphn)
-        DividerView(dividerType: .space)
+        DividerView(dividerType: .colon, componentSize: nil)
+        DividerView(dividerType: .period, componentSize: nil)
+        DividerView(dividerType: .hyphn, componentSize: nil)
+        DividerView(dividerType: .space, componentSize: nil)
     }
 }

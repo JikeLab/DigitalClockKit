@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TimeView: View {
+    let componentSize: CGSize?
     @State var hour: Int = 0
     @State var minute: Int = 0
     @State var second: Int = 0
@@ -16,13 +17,13 @@ struct TimeView: View {
 
     var body: some View {
         HStack {
-            NumberView(value: hour, numberOfDigits: nil)
-            DividerView(dividerType: .colon)
-            NumberView(value: minute, numberOfDigits: 2)
-            DividerView(dividerType: .space)
-            NumberView(value: second, numberOfDigits: 2)
-            DividerView(dividerType: .period)
-            NumberView(value: miliSecond, numberOfDigits: 2)
+            NumberView(value: hour, numberOfDigits: nil, componentSize: componentSize ?? defaultComponentSize)
+            DividerView(dividerType: .colon, componentSize: nil)
+            NumberView(value: minute, numberOfDigits: 2, componentSize: componentSize ?? defaultComponentSize)
+            DividerView(dividerType: .space, componentSize: nil)
+            NumberView(value: second, numberOfDigits: 2, componentSize: componentSize ?? defaultComponentSize)
+            DividerView(dividerType: .period, componentSize: nil)
+            NumberView(value: miliSecond, numberOfDigits: 2, componentSize: componentSize ?? defaultComponentSize)
         }.onReceive(timer){ _ in
             self.hour = Calendar.current.component(.hour, from: Date())
             self.minute = Calendar.current.component(.minute, from: Date())
@@ -33,7 +34,8 @@ struct TimeView: View {
 }
 
 #Preview {
-    TimeView(hour: 1,
+    TimeView(componentSize: nil,
+             hour: 1,
              minute: 23,
              second: 45,
              miliSecond: 67)

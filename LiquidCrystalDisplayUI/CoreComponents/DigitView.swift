@@ -9,10 +9,11 @@ import SwiftUI
 
 struct DigitView: View {
     let value: Int
+    let componentSize: CGSize
 
     var body: some View {
         ZStack {
-            DigitContentView(type: .init(rawValue: value), width: 18, height: 30, inset: 1, margin: 1, color: Color.black)
+            DigitContentView(type: .init(rawValue: value), componentSize: componentSize, inset: 1, margin: 1, color: Color.black)
         }
     }
 }
@@ -67,21 +68,20 @@ private struct DigitContentView: View {
     }
 
     let type: DigitType?
-    let width: CGFloat
-    let height: CGFloat
+    let componentSize: CGSize
     let inset: CGFloat
     let margin: CGFloat
     let color: Color
 
     var body: some View {
         ZStack {
-            let lineWidth = (width - inset * 2) / 4
+            let lineWidth = (componentSize.width - inset * 2 - margin * 2) / 3
             if type?.paths.contains(.top) ?? false {
                 // topPath
                 Path { path in
                     path.move(to: CGPoint(x: (inset + margin), y: inset))
-                    path.addLine(to: CGPoint(x: (width - inset - margin), y: inset))
-                    path.addLine(to: CGPoint(x: (width - lineWidth - margin), y: lineWidth))
+                    path.addLine(to: CGPoint(x: (componentSize.width - inset - margin), y: inset))
+                    path.addLine(to: CGPoint(x: (componentSize.width - lineWidth - margin), y: lineWidth))
                     path.addLine(to: CGPoint(x: (lineWidth + margin), y: lineWidth))
                 }
                 .fill(color)
@@ -89,32 +89,32 @@ private struct DigitContentView: View {
             if type?.paths.contains(.rightTop) ?? false {
                 // rightTopPath
                 Path { path in
-                    path.move(to: CGPoint(x: (width - lineWidth), y: (lineWidth + margin)))
-                    path.addLine(to: CGPoint(x: (width - inset), y: (inset + margin)))
-                    path.addLine(to: CGPoint(x: (width - inset), y: (height / 2 - margin)))
-                    path.addLine(to: CGPoint(x: (width - lineWidth / 2), y: (height / 2 - margin)))
-                    path.addLine(to: CGPoint(x: (width - lineWidth), y: (height / 2 - lineWidth / 2 - margin)))
+                    path.move(to: CGPoint(x: (componentSize.width - lineWidth), y: (lineWidth + margin)))
+                    path.addLine(to: CGPoint(x: (componentSize.width - inset), y: (inset + margin)))
+                    path.addLine(to: CGPoint(x: (componentSize.width - inset), y: (componentSize.height / 2 - margin)))
+                    path.addLine(to: CGPoint(x: (componentSize.width - lineWidth / 2), y: (componentSize.height / 2 - margin)))
+                    path.addLine(to: CGPoint(x: (componentSize.width - lineWidth), y: (componentSize.height / 2 - lineWidth / 2 - margin)))
                 }
                 .fill(color)
             }
             if type?.paths.contains(.rightBottom) ?? false {
                 // rightBottomPath
                 Path { path in
-                    path.move(to: CGPoint(x: (width - lineWidth), y: (height / 2 + lineWidth / 2 + margin)))
-                    path.addLine(to: CGPoint(x: (width - lineWidth / 2), y: (height / 2 + margin)))
-                    path.addLine(to: CGPoint(x: (width - inset), y: (height / 2 + margin)))
-                    path.addLine(to: CGPoint(x: (width - inset), y: (height - inset - margin)))
-                    path.addLine(to: CGPoint(x: (width - lineWidth), y: (height - lineWidth - margin)))
+                    path.move(to: CGPoint(x: (componentSize.width - lineWidth), y: (componentSize.height / 2 + lineWidth / 2 + margin)))
+                    path.addLine(to: CGPoint(x: (componentSize.width - lineWidth / 2), y: (componentSize.height / 2 + margin)))
+                    path.addLine(to: CGPoint(x: (componentSize.width - inset), y: (componentSize.height / 2 + margin)))
+                    path.addLine(to: CGPoint(x: (componentSize.width - inset), y: (componentSize.height - inset - margin)))
+                    path.addLine(to: CGPoint(x: (componentSize.width - lineWidth), y: (componentSize.height - lineWidth - margin)))
                 }
                 .fill(color)
             }
             if type?.paths.contains(.bottom) ?? false {
                 // bottomPath
                 Path { path in
-                    path.move(to: CGPoint(x: (lineWidth + margin), y: (height - lineWidth)))
-                    path.addLine(to: CGPoint(x: (width - lineWidth - margin), y: (height - lineWidth)))
-                    path.addLine(to: CGPoint(x: (width - inset - margin), y: (height - inset)))
-                    path.addLine(to: CGPoint(x: (inset + margin), y: (height - inset)))
+                    path.move(to: CGPoint(x: (lineWidth + margin), y: (componentSize.height - lineWidth)))
+                    path.addLine(to: CGPoint(x: (componentSize.width - lineWidth - margin), y: (componentSize.height - lineWidth)))
+                    path.addLine(to: CGPoint(x: (componentSize.width - inset - margin), y: (componentSize.height - inset)))
+                    path.addLine(to: CGPoint(x: (inset + margin), y: (componentSize.height - inset)))
                 }
                 .fill(color)
             }
@@ -123,55 +123,55 @@ private struct DigitContentView: View {
                 Path { path in
                     path.move(to: CGPoint(x: inset, y: (inset + margin)))
                     path.addLine(to: CGPoint(x: lineWidth, y: (lineWidth + margin)))
-                    path.addLine(to: CGPoint(x: lineWidth, y: (height / 2 - lineWidth / 2 - margin)))
-                    path.addLine(to: CGPoint(x: (lineWidth / 2), y: (height / 2 - margin)))
-                    path.addLine(to: CGPoint(x: inset, y: (height / 2 - margin)))
+                    path.addLine(to: CGPoint(x: lineWidth, y: (componentSize.height / 2 - lineWidth / 2 - margin)))
+                    path.addLine(to: CGPoint(x: (lineWidth / 2), y: (componentSize.height / 2 - margin)))
+                    path.addLine(to: CGPoint(x: inset, y: (componentSize.height / 2 - margin)))
                 }
                 .fill(color)
             }
             if type?.paths.contains(.leftBottom) ?? false {
                 // leftBottomPath
                 Path { path in
-                    path.move(to: CGPoint(x: inset, y: (height / 2 + margin)))
-                    path.addLine(to: CGPoint(x: (lineWidth / 2), y: (height / 2 + margin)))
-                    path.addLine(to: CGPoint(x: lineWidth, y: (height / 2 + lineWidth / 2 + margin)))
-                    path.addLine(to: CGPoint(x: lineWidth, y: (height - lineWidth - margin)))
-                    path.addLine(to: CGPoint(x: inset, y: (height - inset - margin)))
+                    path.move(to: CGPoint(x: inset, y: (componentSize.height / 2 + margin)))
+                    path.addLine(to: CGPoint(x: (lineWidth / 2), y: (componentSize.height / 2 + margin)))
+                    path.addLine(to: CGPoint(x: lineWidth, y: (componentSize.height / 2 + lineWidth / 2 + margin)))
+                    path.addLine(to: CGPoint(x: lineWidth, y: (componentSize.height - lineWidth - margin)))
+                    path.addLine(to: CGPoint(x: inset, y: (componentSize.height - inset - margin)))
                 }
                 .fill(color)
             }
             if type?.paths.contains(.center) ?? false {
                 // centerPath
                 Path { path in
-                    path.move(to: CGPoint(x: (lineWidth / 2 + margin), y: (height / 2)))
-                    path.addLine(to: CGPoint(x: (lineWidth + margin), y: (height / 2 - lineWidth / 2)))
-                    path.addLine(to: CGPoint(x: (width - lineWidth - margin), y: (height / 2 - lineWidth / 2)))
-                    path.addLine(to: CGPoint(x: (width - lineWidth / 2 - margin), y: (height / 2)))
-                    path.addLine(to: CGPoint(x: (width - lineWidth - margin), y: (height / 2 + lineWidth / 2)))
-                    path.addLine(to: CGPoint(x: (lineWidth + margin), y: (height / 2 + lineWidth / 2)))
+                    path.move(to: CGPoint(x: (lineWidth / 2 + margin), y: (componentSize.height / 2)))
+                    path.addLine(to: CGPoint(x: (lineWidth + margin), y: (componentSize.height / 2 - lineWidth / 2)))
+                    path.addLine(to: CGPoint(x: (componentSize.width - lineWidth - margin), y: (componentSize.height / 2 - lineWidth / 2)))
+                    path.addLine(to: CGPoint(x: (componentSize.width - lineWidth / 2 - margin), y: (componentSize.height / 2)))
+                    path.addLine(to: CGPoint(x: (componentSize.width - lineWidth - margin), y: (componentSize.height / 2 + lineWidth / 2)))
+                    path.addLine(to: CGPoint(x: (lineWidth + margin), y: (componentSize.height / 2 + lineWidth / 2)))
                 }
                 .fill(color)
             }
         }
-        .frame(width: width, height: height)
+        .frame(width: componentSize.width, height: componentSize.height)
     }
 }
 
 #Preview {
     VStack {
         HStack {
-            DigitView(value: 0)
-            DigitView(value: 1)
-            DigitView(value: 2)
-            DigitView(value: 3)
-            DigitView(value: 4)
+            DigitView(value: 0, componentSize: defaultComponentSize)
+            DigitView(value: 1, componentSize: defaultComponentSize)
+            DigitView(value: 2, componentSize: defaultComponentSize)
+            DigitView(value: 3, componentSize: defaultComponentSize)
+            DigitView(value: 4, componentSize: defaultComponentSize)
         }
         HStack {
-            DigitView(value: 5)
-            DigitView(value: 6)
-            DigitView(value: 7)
-            DigitView(value: 8)
-            DigitView(value: 9)
+            DigitView(value: 5, componentSize: defaultComponentSize)
+            DigitView(value: 6, componentSize: defaultComponentSize)
+            DigitView(value: 7, componentSize: defaultComponentSize)
+            DigitView(value: 8, componentSize: defaultComponentSize)
+            DigitView(value: 9, componentSize: defaultComponentSize)
         }
     }
 }

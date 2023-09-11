@@ -9,15 +9,14 @@ import SwiftUI
 
 struct MatrixView: View {
     let coordinates: [Coordinate]
-    let width: CGFloat
-    let height: CGFloat
+    let componentSize: CGSize
     let color: Color
     let matrix: Coordinate = .init(x: 5, y: 5)
     let margin: CGFloat
 
     var body: some View {
         ZStack {
-            let blockSize: (CGFloat, CGFloat) = (width / CGFloat(matrix.x), height / CGFloat(matrix.y))
+            let blockSize: (CGFloat, CGFloat) = (componentSize.width / CGFloat(matrix.x), componentSize.height / CGFloat(matrix.y))
             ForEach(0..<matrix.x, id: \.self) { x in
                 ForEach(0..<matrix.y, id: \.self) { y in
                     if coordinates.contains(Coordinate(x: x, y: y)) {
@@ -34,7 +33,7 @@ struct MatrixView: View {
                 }
             }
         }
-        .frame(width: width, height: height)
+        .frame(width: componentSize.width, height: componentSize.height)
     }
 }
 
@@ -52,6 +51,6 @@ struct MatrixView: View {
             .init(x: 0, y: 4),
             .init(x: 4, y: 4)
         ],
-        width: 18, height: 30, color: Color.black, margin: 1
+        componentSize: defaultComponentSize, color: Color.black, margin: 1
     )
 }
