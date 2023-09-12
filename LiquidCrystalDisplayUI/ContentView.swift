@@ -8,40 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var year: Int = Calendar.current.component(.year, from: Date())
+    @State var month: Int = Calendar.current.component(.month, from: Date())
+    @State var day: Int = Calendar.current.component(.day, from: Date())
+    @State var weekday: Int = Calendar.current.component(.weekday, from: Date())
+    @State var hour: Int = Calendar.current.component(.hour, from: Date())
+    @State var minute: Int = Calendar.current.component(.minute, from: Date())
+    @State var second: Int = Calendar.current.component(.second, from: Date())
+    @State var miliSecond: Int = Calendar.current.component(.nanosecond, from: Date()) / 10000000
+
     var body: some View {
         NavigationView {
             List {
                 Section {
-                    NavigationLink(destination: AgeView(componentSize: nil)) {
+                    NavigationLink(destination: AgeView(componentSize: nil, year: $year)) {
                         Text("Age")
                     }
-                    NavigationLink(destination: DayView(componentSize: nil)) {
+                    NavigationLink(destination: DayView(componentSize: nil, month: $month, day: $day)) {
                         Text("Day")
                     }
-                    NavigationLink(destination: TimeView(componentSize: nil)) {
+                    NavigationLink(destination: TimeView(componentSize: nil, hour: $hour, minute: $minute, second: $second, miliSecond: $miliSecond)) {
                         Text("Time")
                     }
-                    NavigationLink(destination: WeekdayView(componentSize: nil)) {
+                    NavigationLink(destination: WeekdayView(componentSize: nil, weekday: $weekday)) {
                         Text("Weekday")
                     }
                 } header: {
                     Text("DATE COMPONENTS")
                 }
                 Section {
-                    ZStack {
-                        VStack {
-                            HStack {
-                                AgeView(componentSize: nil)
-                                DividerView(dividerType: .space, componentSize: nil)
-                                DayView(componentSize: nil)
-                                DividerView(dividerType: .space, componentSize: nil)
-                                WeekdayView(componentSize: nil)
-                            }
-                            TimeView(componentSize: nil)
-                        }
-                        .padding()
-                    }
-                    .background(Color(red: (194 / 255), green: (216 / 255), blue: (214 / 255)))
+                    DisplayView()
                 } header: {
                     Text("SAMPLE CLOCK")
                 }

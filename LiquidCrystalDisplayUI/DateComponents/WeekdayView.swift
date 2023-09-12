@@ -88,10 +88,10 @@ enum WeekdayType: Int {
 struct WeekdayView: View {
 
     let componentSize: CGSize?
-    let weekdayType = WeekdayType(rawValue: Calendar.current.component(.weekday, from: Date()))
+    @Binding var weekday: Int
 
     var body: some View {
-        if let weekdayType {
+        if let weekdayType = WeekdayType(rawValue: weekday) {
             WeekdayContentView(weekdayType: weekdayType, componentSize: componentSize ?? defaultComponentSize)
         }
     }

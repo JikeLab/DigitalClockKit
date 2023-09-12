@@ -9,11 +9,10 @@ import SwiftUI
 
 struct TimeView: View {
     let componentSize: CGSize?
-    @State var hour: Int = 0
-    @State var minute: Int = 0
-    @State var second: Int = 0
-    @State var miliSecond: Int = 0
-    let timer = Timer.publish(every: 0.01, on: .current, in: .common).autoconnect()
+    @Binding var hour: Int
+    @Binding var minute: Int
+    @Binding var second: Int
+    @Binding var miliSecond: Int
 
     var body: some View {
         HStack {
@@ -24,19 +23,14 @@ struct TimeView: View {
             NumberView(value: second, numberOfDigits: 2, componentSize: componentSize ?? defaultComponentSize)
             DividerView(dividerType: .period, componentSize: nil)
             NumberView(value: miliSecond, numberOfDigits: 2, componentSize: componentSize ?? defaultComponentSize)
-        }.onReceive(timer){ _ in
-            self.hour = Calendar.current.component(.hour, from: Date())
-            self.minute = Calendar.current.component(.minute, from: Date())
-            self.second = Calendar.current.component(.second, from: Date())
-            self.miliSecond = Calendar.current.component(.nanosecond, from: Date()) / 10000000
         }
     }
 }
 
 #Preview {
-    TimeView(componentSize: nil,
-             hour: 1,
-             minute: 23,
-             second: 45,
-             miliSecond: 67)
+    @State var hour: Int = 1
+    @State var minute: Int = 23
+    @State var second: Int = 45
+    @State var miliSecond: Int = 6
+    return TimeView(componentSize: nil, hour: $hour, minute: $minute, second: $second, miliSecond: $miliSecond)
 }

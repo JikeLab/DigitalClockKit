@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AgeView: View {
     let componentSize: CGSize?
-    let year: Int = Calendar.current.component(.year, from: Date())
+    @Binding var year: Int
 
     var body: some View {
         NumberView(value: year, numberOfDigits: 2, componentSize: componentSize ?? defaultComponentSize)
@@ -17,5 +17,6 @@ struct AgeView: View {
 }
 
 #Preview {
-    AgeView(componentSize: nil)
+    @State var year: Int = 2023
+    return AgeView(componentSize: nil, year: $year)
 }
