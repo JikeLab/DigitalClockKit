@@ -21,6 +21,9 @@ struct DisplayView: View {
 
     var body: some View {
         ZStack {
+            RoundedRectangle(cornerRadius: 6)
+                .fill(Color(red: (194 / 255), green: (216 / 255), blue: (214 / 255)).gradient.shadow(.inner(color: .black.opacity(0.6), radius: 3, x: 0, y: 2)))
+                        .frame(width: 220, height: 124)
             VStack(spacing: 0) {
                 HStack {
                     WeekdayView(componentSize: matrixComponentSize, weekday: $weekday)
@@ -46,9 +49,7 @@ struct DisplayView: View {
                 }
                 .padding(10)
             }
-            .background(Color(red: (194 / 255), green: (216 / 255), blue: (214 / 255)))
             .frame(width: 220)
-            .cornerRadius(6)
         }.onReceive(timer){ _ in
             year = Calendar.current.component(.year, from: Date())
             month = Calendar.current.component(.month, from: Date())
