@@ -21,18 +21,34 @@ struct DisplayView: View {
 
     var body: some View {
         ZStack {
-            VStack {
+            VStack(spacing: 0) {
                 HStack {
-                    AgeView(componentSize: nil, year: $year)
-                    DividerView(dividerType: .space, componentSize: nil)
-                    DayView(componentSize: nil, month: $month, day: $day)
-                    DividerView(dividerType: .space, componentSize: nil)
-                    WeekdayView(componentSize: nil, weekday: $weekday)
+                    WeekdayView(componentSize: matrixComponentSize, weekday: $weekday)
+                        .padding(10)
+                    Rectangle()
+                        .foregroundColor(.black)
+                        .frame(width: 1, height: (matrixComponentSize.height + 10 * 2))
+                    Spacer()
                 }
-                TimeView(componentSize: nil, hour: $hour, minute: $minute, second: $second, miliSecond: $miliSecond)
+                Rectangle()
+                    .foregroundColor(.black)
+                    .frame(height: 1)
+                HStack {
+                    VStack {
+                        TimeView(componentSize: nil, hasMiliSecond: false, hour: $hour, minute: $minute, second: $second, miliSecond: $miliSecond)
+                            .padding(.bottom, 5)
+                        HStack {
+                            AgeView(componentSize: smallComponentSize, year: $year)
+                            Spacer()
+                            DayView(componentSize: smallComponentSize, month: $month, day: $day)
+                        }
+                    }
+                }
+                .padding(10)
             }
-            .padding()
             .background(Color(red: (194 / 255), green: (216 / 255), blue: (214 / 255)))
+            .frame(width: 220)
+            .cornerRadius(6)
         }.onReceive(timer){ _ in
             year = Calendar.current.component(.year, from: Date())
             month = Calendar.current.component(.month, from: Date())

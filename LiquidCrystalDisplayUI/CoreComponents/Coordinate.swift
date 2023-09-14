@@ -8,6 +8,8 @@
 import Foundation
 
 let defaultComponentSize = CGSize(width: 18, height: 30)
+let smallComponentSize = CGSize(width: 12, height: 20)
+let matrixComponentSize = CGSize(width: 18, height: 18)
 
 struct Coordinate: Equatable {
     let x: Int

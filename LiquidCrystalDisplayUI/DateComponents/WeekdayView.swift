@@ -105,7 +105,7 @@ struct WeekdayContentView: View {
     var body: some View {
         HStack {
             ForEach(weekdayType.coordinateGrid, id: \.self) { coordinates in
-                MatrixView(coordinates: coordinates, componentSize: componentSize, color: Color.black, margin: 1)
+                MatrixView(coordinates: coordinates, componentSize: componentSize, color: Color.black, margin: 0)
             }
         }
         

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TimeView: View {
     let componentSize: CGSize?
+    let hasMiliSecond: Bool
     @Binding var hour: Int
     @Binding var minute: Int
     @Binding var second: Int
@@ -21,8 +22,10 @@ struct TimeView: View {
             NumberView(value: minute, numberOfDigits: 2, componentSize: componentSize ?? defaultComponentSize)
             DividerView(dividerType: .space, componentSize: nil)
             NumberView(value: second, numberOfDigits: 2, componentSize: componentSize ?? defaultComponentSize)
-            DividerView(dividerType: .period, componentSize: nil)
-            NumberView(value: miliSecond, numberOfDigits: 2, componentSize: componentSize ?? defaultComponentSize)
+            if hasMiliSecond {
+                DividerView(dividerType: .period, componentSize: nil)
+                NumberView(value: miliSecond, numberOfDigits: 2, componentSize: componentSize ?? defaultComponentSize)
+            }
         }
     }
 }
@@ -32,5 +35,5 @@ struct TimeView: View {
     @State var minute: Int = 23
     @State var second: Int = 45
     @State var miliSecond: Int = 6
-    return TimeView(componentSize: nil, hour: $hour, minute: $minute, second: $second, miliSecond: $miliSecond)
+    return TimeView(componentSize: nil, hasMiliSecond: true, hour: $hour, minute: $minute, second: $second, miliSecond: $miliSecond)
 }

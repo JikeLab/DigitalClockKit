@@ -75,7 +75,7 @@ private struct DigitContentView: View {
 
     var body: some View {
         ZStack {
-            let lineWidth = (componentSize.width - inset * 2 - margin * 2) / 3
+            let lineWidth = (componentSize.width - inset * 2) / 3
             if type?.paths.contains(.top) ?? false {
                 // topPath
                 Path { path in

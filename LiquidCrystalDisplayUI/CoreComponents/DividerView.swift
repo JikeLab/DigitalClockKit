@@ -34,7 +34,7 @@ struct DividerView: View {
 
     var body: some View {
         ZStack {
-            MatrixView(coordinates: dividerType.coordinates, componentSize: componentSize ?? defaultComponentSize, color: Color.black, margin: 1)
+            MatrixView(coordinates: dividerType.coordinates, componentSize: componentSize ?? defaultComponentSize, color: Color.black, margin: 0)
         }
     }
 }

@@ -27,7 +27,7 @@ struct ContentView: View {
                     NavigationLink(destination: DayView(componentSize: nil, month: $month, day: $day)) {
                         Text("Day")
                     }
-                    NavigationLink(destination: TimeView(componentSize: nil, hour: $hour, minute: $minute, second: $second, miliSecond: $miliSecond)) {
+                    NavigationLink(destination: TimeView(componentSize: nil, hasMiliSecond: true, hour: $hour, minute: $minute, second: $second, miliSecond: $miliSecond)) {
                         Text("Time")
                     }
                     NavigationLink(destination: WeekdayView(componentSize: nil, weekday: $weekday)) {
@@ -37,7 +37,11 @@ struct ContentView: View {
                     Text("DATE COMPONENTS")
                 }
                 Section {
-                    DisplayView()
+                    HStack {
+                        Spacer()
+                        DisplayView()
+                        Spacer()
+                    }
                 } header: {
                     Text("SAMPLE CLOCK")
                 }
