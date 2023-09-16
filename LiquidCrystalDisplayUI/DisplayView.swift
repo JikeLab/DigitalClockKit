@@ -8,25 +8,25 @@
 import SwiftUI
 
 struct DisplayView: View {
-    let timer = Timer.publish(every: 0.01, on: .current, in: .common).autoconnect()
-
-    @State var year: Int = 0
-    @State var month: Int = 0
-    @State var day: Int = 0
-    @State var weekday: Int = 0
-    @State var hour: Int = 0
-    @State var minute: Int = 0
-    @State var second: Int = 0
-    @State var miliSecond: Int = 0
+    @Binding var date: Date
 
     var body: some View {
+        let year = Calendar.current.component(.year, from: date)
+        let month = Calendar.current.component(.month, from: date)
+        let day = Calendar.current.component(.day, from: date)
+        let weekday = Calendar.current.component(.weekday, from: date)
+        let hour = Calendar.current.component(.hour, from: date)
+        let minute = Calendar.current.component(.minute, from: date)
+        let second = Calendar.current.component(.second, from: date)
+        let miliSecond = Calendar.current.component(.nanosecond, from: date) / 10000000
+
         ZStack {
             RoundedRectangle(cornerRadius: 6)
                 .fill(Color(red: (194 / 255), green: (216 / 255), blue: (214 / 255)).gradient.shadow(.inner(color: .black.opacity(0.6), radius: 3, x: 0, y: 2)))
                         .frame(width: 220, height: 124)
             VStack(spacing: 0) {
                 HStack {
-                    WeekdayView(componentSize: matrixComponentSize, weekday: $weekday)
+                    WeekdayView(componentSize: matrixComponentSize, weekday: weekday)
                         .padding(10)
                     Rectangle()
                         .foregroundColor(.black)
@@ -38,31 +38,23 @@ struct DisplayView: View {
                     .frame(height: 1)
                 HStack {
                     VStack {
-                        TimeView(componentSize: nil, hasMiliSecond: false, hour: $hour, minute: $minute, second: $second, miliSecond: $miliSecond)
+                        TimeView(componentSize: nil, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond)
                             .padding(.bottom, 5)
                         HStack {
-                            AgeView(componentSize: smallComponentSize, year: $year)
+                            AgeView(componentSize: smallComponentSize, year: year)
                             Spacer()
-                            DayView(componentSize: smallComponentSize, month: $month, day: $day)
+                            DayView(componentSize: smallComponentSize, month: month, day: day)
                         }
                     }
                 }
                 .padding(10)
             }
             .frame(width: 220)
-        }.onReceive(timer){ _ in
-            year = Calendar.current.component(.year, from: Date())
-            month = Calendar.current.component(.month, from: Date())
-            day = Calendar.current.component(.day, from: Date())
-            weekday = Calendar.current.component(.weekday, from: Date())
-            hour = Calendar.current.component(.hour, from: Date())
-            minute = Calendar.current.component(.minute, from: Date())
-            second = Calendar.current.component(.second, from: Date())
-            miliSecond = Calendar.current.component(.nanosecond, from: Date()) / 10000000
         }
     }
 }
 
 #Preview {
-    DisplayView()
+    @State var currentDate:Date = Date()
+    return DisplayView(date: $currentDate)
 }

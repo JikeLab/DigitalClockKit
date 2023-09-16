@@ -8,29 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var year: Int = Calendar.current.component(.year, from: Date())
-    @State var month: Int = Calendar.current.component(.month, from: Date())
-    @State var day: Int = Calendar.current.component(.day, from: Date())
-    @State var weekday: Int = Calendar.current.component(.weekday, from: Date())
-    @State var hour: Int = Calendar.current.component(.hour, from: Date())
-    @State var minute: Int = Calendar.current.component(.minute, from: Date())
-    @State var second: Int = Calendar.current.component(.second, from: Date())
-    @State var miliSecond: Int = Calendar.current.component(.nanosecond, from: Date()) / 10000000
+    let timer = Timer.publish(every: 0.01, on: .current, in: .common).autoconnect()
+    @State var currentDate:Date = Date()
 
     var body: some View {
         NavigationView {
             List {
+                let year = Calendar.current.component(.year, from: currentDate)
+                let month = Calendar.current.component(.month, from: currentDate)
+                let day = Calendar.current.component(.day, from: currentDate)
+                let weekday = Calendar.current.component(.weekday, from: currentDate)
+                let hour = Calendar.current.component(.hour, from: currentDate)
+                let minute = Calendar.current.component(.minute, from: currentDate)
+                let second = Calendar.current.component(.second, from: currentDate)
+                let miliSecond = Calendar.current.component(.nanosecond, from: currentDate) / 10000000
+
                 Section {
-                    NavigationLink(destination: AgeView(componentSize: nil, year: $year)) {
+                    NavigationLink(destination: AgeView(componentSize: nil, year: year)) {
                         Text("Age")
                     }
-                    NavigationLink(destination: DayView(componentSize: nil, month: $month, day: $day)) {
+                    NavigationLink(destination: DayView(componentSize: nil, month: month, day: day)) {
                         Text("Day")
                     }
-                    NavigationLink(destination: TimeView(componentSize: nil, hasMiliSecond: true, hour: $hour, minute: $minute, second: $second, miliSecond: $miliSecond)) {
+                    NavigationLink(destination: TimeView(componentSize: nil, hasMiliSecond: true, hour: hour, minute: minute, second: second, miliSecond: miliSecond)) {
                         Text("Time")
                     }
-                    NavigationLink(destination: WeekdayView(componentSize: nil, weekday: $weekday)) {
+                    NavigationLink(destination: WeekdayView(componentSize: nil, weekday: weekday)) {
                         Text("Weekday")
                     }
                 } header: {
@@ -39,15 +42,17 @@ struct ContentView: View {
                 Section {
                     HStack {
                         Spacer()
-                        DisplayView()
+                        DisplayView(date: $currentDate)
                         Spacer()
                     }
                 } header: {
-                    Text("SAMPLE CLOCK")
+                    Text("SAMPLES")
                 }
             }
             .listStyle(InsetGroupedListStyle())
             .navigationTitle("Liquid Crystal Display")
+        }.onReceive(timer){ value in
+            currentDate = value
         }
     }
 }

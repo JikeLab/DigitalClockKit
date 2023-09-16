@@ -10,10 +10,10 @@ import SwiftUI
 struct TimeView: View {
     let componentSize: CGSize?
     let hasMiliSecond: Bool
-    @Binding var hour: Int
-    @Binding var minute: Int
-    @Binding var second: Int
-    @Binding var miliSecond: Int
+    let hour: Int
+    let minute: Int
+    let second: Int
+    let miliSecond: Int
 
     var body: some View {
         HStack {
@@ -31,9 +31,5 @@ struct TimeView: View {
 }
 
 #Preview {
-    @State var hour: Int = 1
-    @State var minute: Int = 23
-    @State var second: Int = 45
-    @State var miliSecond: Int = 6
-    return TimeView(componentSize: nil, hasMiliSecond: true, hour: $hour, minute: $minute, second: $second, miliSecond: $miliSecond)
+    TimeView(componentSize: nil, hasMiliSecond: true, hour: 1, minute: 23, second: 45, miliSecond: 6)
 }

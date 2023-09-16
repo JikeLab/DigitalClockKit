@@ -9,8 +9,8 @@ import SwiftUI
 
 struct DayView: View {
     let componentSize: CGSize?
-    @Binding var month: Int
-    @Binding var day: Int
+    let month: Int
+    let day: Int
     let divider: DividerType = .hyphn
 
     var body: some View {
@@ -23,7 +23,5 @@ struct DayView: View {
 }
 
 #Preview {
-    @State var month: Int = 1
-    @State var day: Int = 23
-    return DayView(componentSize: nil, month: $month, day: $day)
+    DayView(componentSize: nil, month: 1, day: 23)
 }

@@ -88,38 +88,27 @@ enum WeekdayType: Int {
 struct WeekdayView: View {
 
     let componentSize: CGSize?
-    @Binding var weekday: Int
+    let weekday: Int
 
     var body: some View {
         if let weekdayType = WeekdayType(rawValue: weekday) {
-            WeekdayContentView(weekdayType: weekdayType, componentSize: componentSize ?? defaultComponentSize)
-        }
-    }
-}
-
-struct WeekdayContentView: View {
-
-    let weekdayType: WeekdayType
-    let componentSize: CGSize
-
-    var body: some View {
-        HStack {
-            ForEach(weekdayType.coordinateGrid, id: \.self) { coordinates in
-                MatrixView(coordinates: coordinates, componentSize: componentSize, color: Color.black, margin: 0)
+            HStack {
+                ForEach(weekdayType.coordinateGrid, id: \.self) { coordinates in
+                    MatrixView(coordinates: coordinates, componentSize: componentSize ?? defaultComponentSize, color: Color.black, margin: 0)
+                }
             }
         }
-        
     }
 }
 
 #Preview {
     VStack {
-        WeekdayContentView(weekdayType: .sunday, componentSize: defaultComponentSize)
-        WeekdayContentView(weekdayType: .monday, componentSize: defaultComponentSize)
-        WeekdayContentView(weekdayType: .tuesday, componentSize: defaultComponentSize)
-        WeekdayContentView(weekdayType: .wednesday, componentSize: defaultComponentSize)
-        WeekdayContentView(weekdayType: .thursday, componentSize: defaultComponentSize)
-        WeekdayContentView(weekdayType: .friday, componentSize: defaultComponentSize)
-        WeekdayContentView(weekdayType: .saturday, componentSize: defaultComponentSize)
+        WeekdayView(componentSize: nil, weekday: 1)
+        WeekdayView(componentSize: nil, weekday: 2)
+        WeekdayView(componentSize: nil, weekday: 3)
+        WeekdayView(componentSize: nil, weekday: 4)
+        WeekdayView(componentSize: nil, weekday: 5)
+        WeekdayView(componentSize: nil, weekday: 6)
+        WeekdayView(componentSize: nil, weekday: 7)
     }
 }
