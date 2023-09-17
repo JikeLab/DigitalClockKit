@@ -12,7 +12,7 @@ struct AgeView: View {
     let year: Int
 
     var body: some View {
-        NumberView(value: year, numberOfDigits: 2, componentSize: componentSize ?? defaultComponentSize)
+        NumberView(value: year, numberOfDigits: 4, zeroPadding: nil, componentSize: componentSize ?? defaultComponentSize)
     }
 }
 

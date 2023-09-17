@@ -26,7 +26,7 @@ struct Watch1View: View {
                         .frame(width: 220, height: 124)
             VStack(spacing: 0) {
                 HStack {
-                    WeekdayView(componentSize: matrixComponentSize, weekday: weekday)
+                    WeekdayView(componentSize: matrixComponentSize, weekday: weekday, shorten: false)
                         .padding(10)
                     Rectangle()
                         .foregroundColor(.black)
@@ -38,7 +38,7 @@ struct Watch1View: View {
                     .frame(height: 1)
                 HStack {
                     VStack {
-                        TimeView(componentSize: nil, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond)
+                        TimeView(componentSize: nil, timeComponentSize: nil, secondDividerType: .space, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond)
                             .padding(.bottom, 5)
                         HStack {
                             AgeView(componentSize: smallComponentSize, year: year)

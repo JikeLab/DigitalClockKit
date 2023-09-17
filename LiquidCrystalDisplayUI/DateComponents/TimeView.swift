@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TimeView: View {
     let componentSize: CGSize?
+    let timeComponentSize: CGSize?
+    let secondDividerType: DividerType?
     let hasMiliSecond: Bool
     let hour: Int
     let minute: Int
@@ -16,20 +18,25 @@ struct TimeView: View {
     let miliSecond: Int
 
     var body: some View {
-        HStack {
-            NumberView(value: hour, numberOfDigits: nil, componentSize: componentSize ?? defaultComponentSize)
-            DividerView(dividerType: .colon, componentSize: nil)
-            NumberView(value: minute, numberOfDigits: 2, componentSize: componentSize ?? defaultComponentSize)
-            DividerView(dividerType: .space, componentSize: nil)
-            NumberView(value: second, numberOfDigits: 2, componentSize: componentSize ?? defaultComponentSize)
+        HStack(alignment: .bottom) {
+            NumberView(value: hour, numberOfDigits: 2, zeroPadding: nil, componentSize: componentSize ?? timeComponentSize ?? defaultComponentSize)
+            DividerView(dividerType: .colon, componentSize: componentSize ?? timeComponentSize ?? defaultComponentSize)
+            NumberView(value: minute, numberOfDigits: 2, zeroPadding: true, componentSize: componentSize ?? timeComponentSize ?? defaultComponentSize)
+            if let secondDividerType {
+                DividerView(dividerType: secondDividerType, componentSize: componentSize ?? defaultComponentSize)
+            }
+            NumberView(value: second, numberOfDigits: 2, zeroPadding: true, componentSize: componentSize ?? defaultComponentSize)
             if hasMiliSecond {
                 DividerView(dividerType: .period, componentSize: nil)
-                NumberView(value: miliSecond, numberOfDigits: 2, componentSize: componentSize ?? defaultComponentSize)
+                NumberView(value: miliSecond, numberOfDigits: 2, zeroPadding: true, componentSize: componentSize ?? defaultComponentSize)
             }
         }
     }
 }
 
 #Preview {
-    TimeView(componentSize: nil, hasMiliSecond: true, hour: 1, minute: 23, second: 45, miliSecond: 6)
+    VStack {
+        TimeView(componentSize: nil, timeComponentSize: nil, secondDividerType: .colon, hasMiliSecond: true, hour: 1, minute: 23, second: 45, miliSecond: 6)
+        TimeView(componentSize: nil, timeComponentSize: largeComponentSize, secondDividerType: nil, hasMiliSecond: false, hour: 10, minute: 58, second: 50, miliSecond: 0)
+    }
 }

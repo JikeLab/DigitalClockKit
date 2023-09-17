@@ -30,10 +30,10 @@ struct ContentView: View {
                     NavigationLink(destination: DayView(componentSize: nil, month: month, day: day)) {
                         Text("Day")
                     }
-                    NavigationLink(destination: TimeView(componentSize: nil, hasMiliSecond: true, hour: hour, minute: minute, second: second, miliSecond: miliSecond)) {
+                    NavigationLink(destination: TimeView(componentSize: nil, timeComponentSize: nil, secondDividerType: .colon, hasMiliSecond: true, hour: hour, minute: minute, second: second, miliSecond: miliSecond)) {
                         Text("Time")
                     }
-                    NavigationLink(destination: WeekdayView(componentSize: nil, weekday: weekday)) {
+                    NavigationLink(destination: WeekdayView(componentSize: nil, weekday: weekday, shorten: false)) {
                         Text("Weekday")
                     }
                 } header: {
@@ -43,6 +43,11 @@ struct ContentView: View {
                     HStack {
                         Spacer()
                         Watch1View(date: $currentDate)
+                        Spacer()
+                    }
+                    HStack {
+                        Spacer()
+                        Watch2View(date: $currentDate)
                         Spacer()
                     }
                 } header: {

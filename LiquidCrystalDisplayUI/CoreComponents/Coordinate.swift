@@ -8,6 +8,8 @@
 import Foundation
 
 let defaultComponentSize = CGSize(width: 18, height: 30)
+let largeComponentSize = CGSize(width: 24, height: 40)
+let mediumComponentSize = CGSize(width: 15, height: 25)
 let smallComponentSize = CGSize(width: 12, height: 20)
 let matrixComponentSize = CGSize(width: 18, height: 18)
 

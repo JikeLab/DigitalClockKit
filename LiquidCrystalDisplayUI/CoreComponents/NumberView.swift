@@ -10,14 +10,19 @@ import SwiftUI
 struct NumberView: View {
     let value: Int
     let numberOfDigits: Int?
+    let zeroPadding: Bool?
     let componentSize: CGSize
 
     var body: some View {
         HStack {
             // 足らない桁を0で埋める
-            if let numberOfDigits = numberOfDigits, numberOfDigits > value.digits.count {
+            if let numberOfDigits, numberOfDigits > value.digits.count {
                 ForEach(0..<(numberOfDigits - value.digits.count), id: \.self) { _ in
-                    DigitView(value: 0, componentSize: componentSize)
+                    if zeroPadding ?? false {
+                        DigitView(value: 0, componentSize: componentSize)
+                    } else {
+                        DividerView(dividerType: .space, componentSize: componentSize)
+                    }
                 }
             }
 
@@ -36,7 +41,8 @@ extension BinaryInteger {
 
 #Preview {
     VStack {
-        NumberView(value: 2023, numberOfDigits: nil, componentSize: defaultComponentSize)
-        NumberView(value: 7, numberOfDigits: 2, componentSize: defaultComponentSize)
+        NumberView(value: 2023, numberOfDigits: 4, zeroPadding: nil, componentSize: defaultComponentSize)
+        NumberView(value: 7, numberOfDigits: 2, zeroPadding: true, componentSize: defaultComponentSize)
+        NumberView(value: 12, numberOfDigits: 3, zeroPadding: false, componentSize: defaultComponentSize)
     }
 }

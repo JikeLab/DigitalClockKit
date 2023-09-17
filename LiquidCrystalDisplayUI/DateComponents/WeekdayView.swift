@@ -89,11 +89,13 @@ struct WeekdayView: View {
 
     let componentSize: CGSize?
     let weekday: Int
+    let shorten: Bool
 
     var body: some View {
         if let weekdayType = WeekdayType(rawValue: weekday) {
             HStack {
-                ForEach(weekdayType.coordinateGrid, id: \.self) { coordinates in
+                let coordinateGrid = shorten ? weekdayType.coordinateGrid.dropLast() : weekdayType.coordinateGrid
+                ForEach(coordinateGrid, id: \.self) { coordinates in
                     MatrixView(coordinates: coordinates, componentSize: componentSize ?? defaultComponentSize, color: Color.black, margin: 0)
                 }
             }
@@ -103,12 +105,40 @@ struct WeekdayView: View {
 
 #Preview {
     VStack {
-        WeekdayView(componentSize: nil, weekday: 1)
-        WeekdayView(componentSize: nil, weekday: 2)
-        WeekdayView(componentSize: nil, weekday: 3)
-        WeekdayView(componentSize: nil, weekday: 4)
-        WeekdayView(componentSize: nil, weekday: 5)
-        WeekdayView(componentSize: nil, weekday: 6)
-        WeekdayView(componentSize: nil, weekday: 7)
+        HStack {
+            WeekdayView(componentSize: nil, weekday: 1, shorten: false)
+            DividerView(dividerType: .space, componentSize: nil)
+            WeekdayView(componentSize: nil, weekday: 1, shorten: true)
+        }
+        HStack {
+            WeekdayView(componentSize: nil, weekday: 2, shorten: false)
+            DividerView(dividerType: .space, componentSize: nil)
+            WeekdayView(componentSize: nil, weekday: 2, shorten: true)
+        }
+        HStack {
+            WeekdayView(componentSize: nil, weekday: 3, shorten: false)
+            DividerView(dividerType: .space, componentSize: nil)
+            WeekdayView(componentSize: nil, weekday: 3, shorten: true)
+        }
+        HStack {
+            WeekdayView(componentSize: nil, weekday: 4, shorten: false)
+            DividerView(dividerType: .space, componentSize: nil)
+            WeekdayView(componentSize: nil, weekday: 4, shorten: true)
+        }
+        HStack {
+            WeekdayView(componentSize: nil, weekday: 5, shorten: false)
+            DividerView(dividerType: .space, componentSize: nil)
+            WeekdayView(componentSize: nil, weekday: 5, shorten: true)
+        }
+        HStack {
+            WeekdayView(componentSize: nil, weekday: 6, shorten: false)
+            DividerView(dividerType: .space, componentSize: nil)
+            WeekdayView(componentSize: nil, weekday: 6, shorten: true)
+        }
+        HStack {
+            WeekdayView(componentSize: nil, weekday: 7, shorten: false)
+            DividerView(dividerType: .space, componentSize: nil)
+            WeekdayView(componentSize: nil, weekday: 7, shorten: true)
+        }
     }
 }
