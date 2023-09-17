@@ -1,5 +1,5 @@
 //
-//  DisplayView.swift
+//  Watch1View.swift
 //  LiquidCrystalDisplayUI
 //
 //  Created by Atsushi Jike on 2023/09/12.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DisplayView: View {
+struct Watch1View: View {
     @Binding var date: Date
 
     var body: some View {
@@ -56,5 +56,5 @@ struct DisplayView: View {
 
 #Preview {
     @State var currentDate:Date = Date()
-    return DisplayView(date: $currentDate)
+    return Watch1View(date: $currentDate)
 }

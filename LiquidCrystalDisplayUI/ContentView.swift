@@ -42,7 +42,7 @@ struct ContentView: View {
                 Section {
                     HStack {
                         Spacer()
-                        DisplayView(date: $currentDate)
+                        Watch1View(date: $currentDate)
                         Spacer()
                     }
                 } header: {
