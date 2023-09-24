@@ -25,13 +25,25 @@ struct Watch1View: View {
                 .fill(Color(red: (194 / 255), green: (216 / 255), blue: (214 / 255)).gradient.shadow(.inner(color: .black.opacity(0.6), radius: 3, x: 0, y: 2)))
                         .frame(width: 220, height: 124)
             VStack(spacing: 0) {
-                HStack {
+                HStack(spacing: 0) {
+                    Spacer()
                     WeekdayView(componentSize: matrixComponentSize, weekday: weekday, shorten: false)
-                        .padding(10)
+                        .padding(.trailing, 10)
                     Rectangle()
                         .foregroundColor(.black)
                         .frame(width: 1, height: (matrixComponentSize.height + 10 * 2))
-                    Spacer()
+                    VStack {
+                        Spacer()
+                        Rectangle()
+                            .background(.blue)
+                            .frame(height: 1)
+                        Spacer()
+                        Rectangle()
+                            .background(.blue)
+                            .frame(height: 1)
+                        Spacer()
+                    }
+                    .frame(width: 100, height: (matrixComponentSize.height + 10 * 2))
                 }
                 Rectangle()
                     .foregroundColor(.black)
