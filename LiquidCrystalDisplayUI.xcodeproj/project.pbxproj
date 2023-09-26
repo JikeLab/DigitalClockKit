@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0810B6C32AB702BC003863A0 /* Watch2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0810B6C22AB702BC003863A0 /* Watch2View.swift */; };
-		085A63F32AA6C703000B5DA6 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085A63ED2AA6C703000B5DA6 /* DividerView.swift */; };
 		085A63F42AA6C703000B5DA6 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085A63EE2AA6C703000B5DA6 /* NumberView.swift */; };
 		085A63F52AA6C703000B5DA6 /* WeekdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085A63EF2AA6C703000B5DA6 /* WeekdayView.swift */; };
 		085A63F62AA6C703000B5DA6 /* AgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085A63F02AA6C703000B5DA6 /* AgeView.swift */; };
@@ -26,7 +25,6 @@
 
 /* Begin PBXFileReference section */
 		0810B6C22AB702BC003863A0 /* Watch2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watch2View.swift; sourceTree = "<group>"; };
-		085A63ED2AA6C703000B5DA6 /* DividerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		085A63EE2AA6C703000B5DA6 /* NumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
 		085A63EF2AA6C703000B5DA6 /* WeekdayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekdayView.swift; sourceTree = "<group>"; };
 		085A63F02AA6C703000B5DA6 /* AgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeView.swift; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 				085A64002AAB2177000B5DA6 /* Coordinate.swift */,
 				085A63EE2AA6C703000B5DA6 /* NumberView.swift */,
 				085A63FC2AA740FB000B5DA6 /* DigitView.swift */,
-				085A63ED2AA6C703000B5DA6 /* DividerView.swift */,
 				085A63FE2AAB090E000B5DA6 /* MatrixView.swift */,
 			);
 			path = CoreComponents;
@@ -197,7 +194,6 @@
 				085A64012AAB2177000B5DA6 /* Coordinate.swift in Sources */,
 				085A63FF2AAB090E000B5DA6 /* MatrixView.swift in Sources */,
 				085A63F62AA6C703000B5DA6 /* AgeView.swift in Sources */,
-				085A63F32AA6C703000B5DA6 /* DividerView.swift in Sources */,
 				085A64032AB06C84000B5DA6 /* Watch1View.swift in Sources */,
 				08EEA3A72A9205310086826E /* LiquidCrystalDisplayUIApp.swift in Sources */,
 				085A63F42AA6C703000B5DA6 /* NumberView.swift in Sources */,

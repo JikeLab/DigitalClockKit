@@ -30,7 +30,7 @@ struct ContentView: View {
                     NavigationLink(destination: DayView(componentSize: nil, month: month, day: day)) {
                         Text("Day")
                     }
-                    NavigationLink(destination: TimeView(componentSize: nil, timeComponentSize: nil, secondDividerType: .colon, hasMiliSecond: true, hour: hour, minute: minute, second: second, miliSecond: miliSecond)) {
+                    NavigationLink(destination: TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: true, hasMiliSecond: true, hour: hour, minute: minute, second: second, miliSecond: miliSecond)) {
                         Text("Time")
                     }
                     NavigationLink(destination: WeekdayView(componentSize: nil, weekday: weekday, shorten: false)) {
@@ -42,12 +42,30 @@ struct ContentView: View {
                 Section {
                     HStack {
                         Spacer()
-                        Watch1View(date: $currentDate)
+                        ScrollView(.horizontal) {
+                            LazyHStack(spacing: 0) {
+                                ForEach(Watch1View.Mode.allCases, id: \.self) { mode in
+                                    Watch1View(date: $currentDate, mode: mode)
+                                        .frame(width: 220)
+                                }
+                            }
+                            .scrollTargetLayout()
+                        }
+                        .scrollTargetBehavior(.paging)
+                        .frame(width: 220)
                         Spacer()
                     }
                     HStack {
                         Spacer()
-                        Watch2View(date: $currentDate)
+                        ScrollView(.horizontal) {
+                            LazyHStack(spacing: 0) {
+                                Watch2View(date: $currentDate)
+                                    .frame(width: 250)
+                            }
+                            .scrollTargetLayout()
+                        }
+                        .scrollTargetBehavior(.paging)
+                        .frame(width: 250)
                         Spacer()
                     }
                 } header: {

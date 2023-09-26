@@ -21,16 +21,17 @@ struct Watch2View: View {
         ZStack {
             RoundedRectangle(cornerRadius: 12)
                 .fill(Color(red: (222 / 255), green: (223 / 255), blue: (218 / 255)).gradient.shadow(.inner(color: .black.opacity(0.6), radius: 1, x: 0, y: 1)))
-                .frame(width: 220, height: 100)
-            VStack(alignment: .trailing, spacing: 5) {
-                HStack {
+            VStack(alignment: .trailing, spacing: 0) {
+                HStack(spacing: 0) {
                     WeekdayView(componentSize: mediumComponentSize, weekday: weekday, shorten: true)
-                    DividerView(dividerType: .space, componentSize: CGSize(width: 24, height: 25))
+                    DigitView(value: 12, componentSize: CGSize(width: 24, height: 25))
                     DayView(componentSize: mediumComponentSize, month: nil, day: day)
                 }
-                .padding(.bottom, 5)
-                TimeView(componentSize: nil, timeComponentSize: largeComponentSize, secondDividerType: nil, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond)
+                .padding(.trailing, 10)
+                .padding(.bottom, 10)
+                TimeView(componentSize: nil, timeComponentSize: largeComponentSize, hasSecondDivider: false, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond)
             }
+            .padding(10)
         }
     }
 }
@@ -39,7 +40,10 @@ struct Watch2View: View {
     @State var earlyDate:Date = Date(timeIntervalSince1970: 6000)
     @State var currentDate:Date = Date()
     return VStack {
+        Spacer()
         Watch2View(date: $earlyDate)
         Watch2View(date: $currentDate)
+        Spacer()
     }
+    .frame(width: 240)
 }

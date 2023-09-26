@@ -11,7 +11,11 @@ struct MatrixView: View {
     let coordinates: [Coordinate]
     let componentSize: CGSize
     let color: Color
-    let matrix: Coordinate = .init(x: 5, y: 5)
+    var matrix: Coordinate {
+        let maxX = coordinates.max { $0.x < $1.x }.map { $0.x } ?? 0
+        let maxY = coordinates.max { $0.y < $1.y }.map { $0.y } ?? 0
+        return .init(x: maxX + 1, y: maxY + 1)
+    }
     let margin: CGFloat
 
     var body: some View {

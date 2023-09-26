@@ -48,7 +48,7 @@ enum WeekdayType: Int {
         case .wednesday:
             return [
                 // W
-                [ .init(x: 0, y: 0), .init(x: 0, y: 1), .init(x: 0, y: 2), .init(x: 0, y: 3), .init(x: 0, y: 4), .init(x: 1, y: 3), .init(x: 2, y: 2), .init(x: 3, y: 3), .init(x: 4, y: 0), .init(x: 4, y: 1), .init(x: 4, y: 2), .init(x: 4, y: 3), .init(x: 4, y: 4)],
+                [ .init(x: 0, y: 0), .init(x: 0, y: 1), .init(x: 0, y: 2), .init(x: 0, y: 3), .init(x: 1, y: 4), .init(x: 2, y: 1), .init(x: 2, y: 2), .init(x: 2, y: 3), .init(x: 3, y: 4), .init(x: 4, y: 0), .init(x: 4, y: 1), .init(x: 4, y: 2), .init(x: 4, y: 3)],
                 // E
                 [ .init(x: 0, y: 0), .init(x: 1, y: 0), .init(x: 2, y: 0), .init(x: 3, y: 0), .init(x: 4, y: 0), .init(x: 0, y: 1), .init(x: 0, y: 2), .init(x: 0, y: 3), .init(x: 0, y: 4), .init(x: 1, y: 2), .init(x: 2, y: 2), .init(x: 3, y: 2), .init(x: 1, y: 4), .init(x: 2, y: 4), .init(x: 3, y: 4), .init(x: 4, y: 4)],
                 // D
@@ -106,39 +106,53 @@ struct WeekdayView: View {
 #Preview {
     VStack {
         HStack {
+            Spacer()
             WeekdayView(componentSize: nil, weekday: 1, shorten: false)
-            DividerView(dividerType: .space, componentSize: nil)
+            Spacer()
             WeekdayView(componentSize: nil, weekday: 1, shorten: true)
+            Spacer()
         }
         HStack {
+            Spacer()
             WeekdayView(componentSize: nil, weekday: 2, shorten: false)
-            DividerView(dividerType: .space, componentSize: nil)
+            Spacer()
             WeekdayView(componentSize: nil, weekday: 2, shorten: true)
+            Spacer()
         }
         HStack {
+            Spacer()
             WeekdayView(componentSize: nil, weekday: 3, shorten: false)
-            DividerView(dividerType: .space, componentSize: nil)
+            Spacer()
             WeekdayView(componentSize: nil, weekday: 3, shorten: true)
+            Spacer()
         }
         HStack {
+            Spacer()
             WeekdayView(componentSize: nil, weekday: 4, shorten: false)
-            DividerView(dividerType: .space, componentSize: nil)
+            Spacer()
             WeekdayView(componentSize: nil, weekday: 4, shorten: true)
+            Spacer()
         }
         HStack {
+            Spacer()
             WeekdayView(componentSize: nil, weekday: 5, shorten: false)
-            DividerView(dividerType: .space, componentSize: nil)
+            Spacer()
             WeekdayView(componentSize: nil, weekday: 5, shorten: true)
+            Spacer()
         }
         HStack {
+            Spacer()
             WeekdayView(componentSize: nil, weekday: 6, shorten: false)
-            DividerView(dividerType: .space, componentSize: nil)
+            Spacer()
             WeekdayView(componentSize: nil, weekday: 6, shorten: true)
+            Spacer()
         }
         HStack {
+            Spacer()
             WeekdayView(componentSize: nil, weekday: 7, shorten: false)
-            DividerView(dividerType: .space, componentSize: nil)
+            Spacer()
             WeekdayView(componentSize: nil, weekday: 7, shorten: true)
+            Spacer()
         }
     }
 }

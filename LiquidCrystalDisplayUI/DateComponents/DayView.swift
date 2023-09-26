@@ -11,13 +11,12 @@ struct DayView: View {
     let componentSize: CGSize?
     let month: Int?
     let day: Int
-    let divider: DividerType = .hyphn
 
     var body: some View {
         HStack {
             if let month {
                 NumberView(value: month, numberOfDigits: 2, zeroPadding: nil, componentSize: componentSize ?? defaultComponentSize)
-                DividerView(dividerType: divider, componentSize: componentSize ?? defaultComponentSize)
+                DigitView(value: 11, componentSize: componentSize ?? defaultComponentSize)
             }
             NumberView(value: day, numberOfDigits: 2, zeroPadding: (month != nil), componentSize: componentSize ?? defaultComponentSize)
         }

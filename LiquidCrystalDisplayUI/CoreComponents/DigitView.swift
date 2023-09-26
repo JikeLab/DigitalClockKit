@@ -30,6 +30,9 @@ private struct DigitContentView: View {
         case seven
         case eight
         case nine
+        case colon
+        case hyphn
+        case space
 
         var paths: PathFlags {
             switch self {
@@ -53,6 +56,12 @@ private struct DigitContentView: View {
                 return [.top, .leftTop, .leftBottom, .center, .rightTop, .rightBottom, .bottom]
             case .nine:
                 return [.top, .leftTop, .center, .rightTop, .rightBottom, .bottom]
+            case .colon:
+                return [.colon]
+            case .hyphn:
+                return [.center]
+            case .space:
+                return []
             }
         }
     }
@@ -65,6 +74,7 @@ private struct DigitContentView: View {
         static let leftTop = PathFlags(rawValue: 1 << 4)
         static let leftBottom = PathFlags(rawValue: 1 << 5)
         static let center = PathFlags(rawValue: 1 << 6)
+        static let colon = PathFlags(rawValue: 1 << 7)
     }
 
     let type: DigitType?
@@ -77,7 +87,7 @@ private struct DigitContentView: View {
         ZStack {
             let lineWidth = (componentSize.width - inset * 2) / 3
             if type?.paths.contains(.top) ?? false {
-                // topPath
+                // top
                 Path { path in
                     path.move(to: CGPoint(x: (inset + margin), y: inset))
                     path.addLine(to: CGPoint(x: (componentSize.width - inset - margin), y: inset))
@@ -87,7 +97,7 @@ private struct DigitContentView: View {
                 .fill(color)
             }
             if type?.paths.contains(.rightTop) ?? false {
-                // rightTopPath
+                // rightTop
                 Path { path in
                     path.move(to: CGPoint(x: (componentSize.width - lineWidth), y: (lineWidth + margin)))
                     path.addLine(to: CGPoint(x: (componentSize.width - inset), y: (inset + margin)))
@@ -98,7 +108,7 @@ private struct DigitContentView: View {
                 .fill(color)
             }
             if type?.paths.contains(.rightBottom) ?? false {
-                // rightBottomPath
+                // rightBottom
                 Path { path in
                     path.move(to: CGPoint(x: (componentSize.width - lineWidth), y: (componentSize.height / 2 + lineWidth / 2 + margin)))
                     path.addLine(to: CGPoint(x: (componentSize.width - lineWidth / 2), y: (componentSize.height / 2 + margin)))
@@ -109,7 +119,7 @@ private struct DigitContentView: View {
                 .fill(color)
             }
             if type?.paths.contains(.bottom) ?? false {
-                // bottomPath
+                // bottom
                 Path { path in
                     path.move(to: CGPoint(x: (lineWidth + margin), y: (componentSize.height - lineWidth)))
                     path.addLine(to: CGPoint(x: (componentSize.width - lineWidth - margin), y: (componentSize.height - lineWidth)))
@@ -119,7 +129,7 @@ private struct DigitContentView: View {
                 .fill(color)
             }
             if type?.paths.contains(.leftTop) ?? false {
-                // leftTopPath
+                // leftTop
                 Path { path in
                     path.move(to: CGPoint(x: inset, y: (inset + margin)))
                     path.addLine(to: CGPoint(x: lineWidth, y: (lineWidth + margin)))
@@ -130,7 +140,7 @@ private struct DigitContentView: View {
                 .fill(color)
             }
             if type?.paths.contains(.leftBottom) ?? false {
-                // leftBottomPath
+                // leftBottom
                 Path { path in
                     path.move(to: CGPoint(x: inset, y: (componentSize.height / 2 + margin)))
                     path.addLine(to: CGPoint(x: (lineWidth / 2), y: (componentSize.height / 2 + margin)))
@@ -141,7 +151,7 @@ private struct DigitContentView: View {
                 .fill(color)
             }
             if type?.paths.contains(.center) ?? false {
-                // centerPath
+                // center
                 Path { path in
                     path.move(to: CGPoint(x: (lineWidth / 2 + margin), y: (componentSize.height / 2)))
                     path.addLine(to: CGPoint(x: (lineWidth + margin), y: (componentSize.height / 2 - lineWidth / 2)))
@@ -151,6 +161,29 @@ private struct DigitContentView: View {
                     path.addLine(to: CGPoint(x: (lineWidth + margin), y: (componentSize.height / 2 + lineWidth / 2)))
                 }
                 .fill(color)
+            }
+            if type?.paths.contains(.colon) ?? false {
+                // colon
+                Path { path in
+                    path.addArc(
+                        center: CGPoint(x: (componentSize.width / 2 - lineWidth / 2), y: (componentSize.height / 4)),
+                        radius: (lineWidth / 2),
+                        startAngle: .degrees(0),
+                        endAngle: .degrees(360),
+                        clockwise: false
+                    )
+                    path.closeSubpath()
+                }
+                Path { path in
+                    path.addArc(
+                        center: CGPoint(x: (componentSize.width / 2 - lineWidth / 2), y: (componentSize.height / 4 * 3)),
+                        radius: (lineWidth / 2),
+                        startAngle: .degrees(0),
+                        endAngle: .degrees(360),
+                        clockwise: false
+                    )
+                    path.closeSubpath()
+                }
             }
         }
         .frame(width: componentSize.width, height: componentSize.height)
@@ -172,6 +205,11 @@ private struct DigitContentView: View {
             DigitView(value: 7, componentSize: defaultComponentSize)
             DigitView(value: 8, componentSize: defaultComponentSize)
             DigitView(value: 9, componentSize: defaultComponentSize)
+        }
+        HStack {
+            DigitView(value: 10, componentSize: defaultComponentSize)
+            DigitView(value: 11, componentSize: defaultComponentSize)
+            DigitView(value: 12, componentSize: defaultComponentSize)
         }
     }
 }

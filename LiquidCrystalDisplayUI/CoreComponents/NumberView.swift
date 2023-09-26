@@ -19,9 +19,11 @@ struct NumberView: View {
             if let numberOfDigits, numberOfDigits > value.digits.count {
                 ForEach(0..<(numberOfDigits - value.digits.count), id: \.self) { _ in
                     if zeroPadding ?? false {
+                        // 0
                         DigitView(value: 0, componentSize: componentSize)
                     } else {
-                        DividerView(dividerType: .space, componentSize: componentSize)
+                        // space
+                        DigitView(value: 12, componentSize: componentSize)
                     }
                 }
             }
