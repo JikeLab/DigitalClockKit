@@ -29,7 +29,7 @@ struct Watch2View: View {
                 }
                 .padding(.trailing, 10)
                 .padding(.bottom, 10)
-                TimeView(componentSize: nil, timeComponentSize: largeComponentSize, hasSecondDivider: false, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond)
+                TimeView(componentSize: nil, timeComponentSize: largeComponentSize, hasSecondDivider: false, hasSecond: true, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond)
             }
             .padding(10)
         }

@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let baseDate = Date()
+
 struct Watch1View: View {
     enum Mode: CaseIterable {
         case clock
@@ -333,12 +335,24 @@ struct Watch1View: View {
                 VStack {
                     switch mode {
                     case .clock:
-                        TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: false, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond)
+                        TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: false, hasSecond: true, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond)
                         Spacer()
                         HStack(spacing: 0) {
                             AgeView(componentSize: smallComponentSize, year: year)
                             Spacer()
                             DayView(componentSize: smallComponentSize, month: month, day: day)
+                        }
+
+                    case .stopWatch:
+                        let interval = date.timeIntervalSince(baseDate)
+                        let h = Int(interval / (60 * 60))
+                        let m = Int((Int(interval) % (60 * 60)) / 60)
+                        let s = Int(Int(interval) % 60)
+                        TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: false, hasSecond: true, hasMiliSecond: false, hour: h, minute: m, second: s, miliSecond: 0)
+                        Spacer()
+                        HStack(spacing: 0) {
+                            TimeView(componentSize: smallComponentSize, timeComponentSize: nil, hasSecondDivider: false, hasSecond: false, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond)
+                            Spacer()
                         }
                         
                     default:

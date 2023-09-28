@@ -30,7 +30,7 @@ struct ContentView: View {
                     NavigationLink(destination: DayView(componentSize: nil, month: month, day: day)) {
                         Text("Day")
                     }
-                    NavigationLink(destination: TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: true, hasMiliSecond: true, hour: hour, minute: minute, second: second, miliSecond: miliSecond)) {
+                    NavigationLink(destination: TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: true, hasSecond: true, hasMiliSecond: true, hour: hour, minute: minute, second: second, miliSecond: miliSecond)) {
                         Text("Time")
                     }
                     NavigationLink(destination: WeekdayView(componentSize: nil, weekday: weekday, shorten: false)) {
