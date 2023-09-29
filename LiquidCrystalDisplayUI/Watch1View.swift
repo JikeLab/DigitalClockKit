@@ -310,9 +310,9 @@ struct Watch1View: View {
 
                     default:
                         HStack {
-                            MatrixView(coordinates: mode.iconCoordinates, componentSize: CGSize(width:18, height: 18), color: Color.black, margin: 0)
+                            MatrixView(coordinates: mode.iconCoordinates, maxMatrix: nil, componentSize: CGSize(width:18, height: 18), color: Color.black, margin: 0)
                             ForEach(mode.labelCoordinateGrid, id: \.self) { coordinates in
-                                MatrixView(coordinates: coordinates, componentSize: CGSize(width: (36 / mode.labelCoordinateGrid.count), height: 18), color: Color.black, margin: 0)
+                                MatrixView(coordinates: coordinates, maxMatrix: nil, componentSize: CGSize(width: (36 / mode.labelCoordinateGrid.count), height: 18), color: Color.black, margin: 0)
                             }
                         }
                         .padding(.trailing, 10)
