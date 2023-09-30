@@ -1,6 +1,6 @@
 //
 //  DayView.swift
-//  LiquidCrystalDisplayUI
+//  MonochromeKit
 //
 //  Created by Atsushi Jike on 2023/09/03.
 //

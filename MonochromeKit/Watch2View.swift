@@ -1,6 +1,6 @@
 //
 //  Watch2View.swift
-//  LiquidCrystalDisplayUI
+//  MonochromeKit
 //
 //  Created by Atsushi Jike on 2023/09/17.
 //
