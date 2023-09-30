@@ -1,7 +1,9 @@
-# Mac
 .DS_Store
+/.build
+/Packages
+.swiftpm
+.*.sw?
 
-# Xcode
 *.xcworkspace
 xcuserdata
 xcuserdata/*
