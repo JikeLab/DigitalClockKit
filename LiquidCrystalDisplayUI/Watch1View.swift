@@ -286,6 +286,7 @@ struct Watch1View: View {
 
     @Binding var date: Date
     let mode: Mode
+    let dualTimeInterval: TimeInterval = -32400
 
     var body: some View {
         let year = Calendar.current.component(.year, from: date)
@@ -296,6 +297,13 @@ struct Watch1View: View {
         let minute = Calendar.current.component(.minute, from: date)
         let second = Calendar.current.component(.second, from: date)
         let miliSecond = Calendar.current.component(.nanosecond, from: date) / 10000000
+        let dualYear = Calendar.current.component(.year, from: Date(timeInterval: dualTimeInterval, since: date))
+        let dualMonth = Calendar.current.component(.month, from: Date(timeInterval: dualTimeInterval, since: date))
+        let dualDay = Calendar.current.component(.day, from: Date(timeInterval: dualTimeInterval, since: date))
+        let dualHour = Calendar.current.component(.hour, from: Date(timeInterval: dualTimeInterval, since: date))
+        let dualMinute = Calendar.current.component(.minute, from: Date(timeInterval: dualTimeInterval, since: date))
+        let dualSecond = Calendar.current.component(.second, from: Date(timeInterval: dualTimeInterval, since: date))
+        let dualMiliSecond = Calendar.current.component(.nanosecond, from: Date(timeInterval: dualTimeInterval, since: date)) / 10000000
 
         ZStack {
             RoundedRectangle(cornerRadius: 6)
@@ -353,6 +361,15 @@ struct Watch1View: View {
                         HStack(spacing: 0) {
                             TimeView(componentSize: smallComponentSize, timeComponentSize: nil, hasSecondDivider: false, hasSecond: false, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond)
                             Spacer()
+                        }
+
+                    case .dualTime:
+                        TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: false, hasSecond: true, hasMiliSecond: false, hour: dualHour, minute: dualMinute, second: dualSecond, miliSecond: dualMiliSecond)
+                        Spacer()
+                        HStack(spacing: 0) {
+                            AgeView(componentSize: smallComponentSize, year: dualYear)
+                            Spacer()
+                            DayView(componentSize: smallComponentSize, month: dualMonth, day: dualDay)
                         }
                         
                     default:
