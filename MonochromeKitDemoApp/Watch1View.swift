@@ -304,7 +304,7 @@ struct Watch1View: View {
                     case .clock:
                         let weekday = Calendar.current.component(.weekday, from: date)
 
-                        WeekdayView(componentSize: matrixComponentSize, weekday: weekday, shorten: false)
+                        WeekdayView(edition: .matrix, componentSize: matrixComponentSize, weekday: weekday)
                             .padding(.trailing, 10)
 
                     default:

@@ -21,6 +21,8 @@
 		081A71632AC8DCFA00A810D1 /* AgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08827E682AC8D4EB00E46115 /* AgeView.swift */; };
 		081A71642AC8DCFA00A810D1 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08827E692AC8D4EB00E46115 /* TimeView.swift */; };
 		081A71652AC8DCFA00A810D1 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08827E6A2AC8D4EB00E46115 /* DayView.swift */; };
+		0827AC102AC96ECB00DF9A7F /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0827AC0F2AC96ECB00DF9A7F /* DividerView.swift */; };
+		0827AC112AC96ECB00DF9A7F /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0827AC0F2AC96ECB00DF9A7F /* DividerView.swift */; };
 		08827E6C2AC8D4EB00E46115 /* MatrixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08827E622AC8D4EB00E46115 /* MatrixView.swift */; };
 		08827E6D2AC8D4EB00E46115 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08827E632AC8D4EB00E46115 /* NumberView.swift */; };
 		08827E6E2AC8D4EB00E46115 /* DigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08827E642AC8D4EB00E46115 /* DigitView.swift */; };
@@ -44,6 +46,7 @@
 		081A71552AC8DBB800A810D1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		081A715A2AC8DC3000A810D1 /* Watch2View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Watch2View.swift; sourceTree = "<group>"; };
 		081A715B2AC8DC3000A810D1 /* Watch1View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Watch1View.swift; sourceTree = "<group>"; };
+		0827AC0F2AC96ECB00DF9A7F /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		08827E622AC8D4EB00E46115 /* MatrixView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixView.swift; sourceTree = "<group>"; };
 		08827E632AC8D4EB00E46115 /* NumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
 		08827E642AC8D4EB00E46115 /* DigitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitView.swift; sourceTree = "<group>"; };
@@ -120,10 +123,11 @@
 		08827E612AC8D4EB00E46115 /* CoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				08827E652AC8D4EB00E46115 /* Coordinate.swift */,
+				08827E642AC8D4EB00E46115 /* DigitView.swift */,
+				0827AC0F2AC96ECB00DF9A7F /* DividerView.swift */,
 				08827E622AC8D4EB00E46115 /* MatrixView.swift */,
 				08827E632AC8D4EB00E46115 /* NumberView.swift */,
-				08827E642AC8D4EB00E46115 /* DigitView.swift */,
-				08827E652AC8D4EB00E46115 /* Coordinate.swift */,
 			);
 			path = CoreComponents;
 			sourceTree = "<group>";
@@ -131,10 +135,10 @@
 		08827E662AC8D4EB00E46115 /* DateComponents */ = {
 			isa = PBXGroup;
 			children = (
-				08827E672AC8D4EB00E46115 /* WeekdayView.swift */,
 				08827E682AC8D4EB00E46115 /* AgeView.swift */,
-				08827E692AC8D4EB00E46115 /* TimeView.swift */,
 				08827E6A2AC8D4EB00E46115 /* DayView.swift */,
+				08827E692AC8D4EB00E46115 /* TimeView.swift */,
+				08827E672AC8D4EB00E46115 /* WeekdayView.swift */,
 			);
 			path = DateComponents;
 			sourceTree = "<group>";
@@ -281,6 +285,7 @@
 				081A71612AC8DCFA00A810D1 /* Coordinate.swift in Sources */,
 				081A71622AC8DCFA00A810D1 /* WeekdayView.swift in Sources */,
 				081A71632AC8DCFA00A810D1 /* AgeView.swift in Sources */,
+				0827AC112AC96ECB00DF9A7F /* DividerView.swift in Sources */,
 				081A71642AC8DCFA00A810D1 /* TimeView.swift in Sources */,
 				081A71652AC8DCFA00A810D1 /* DayView.swift in Sources */,
 				081A71502AC8DBB700A810D1 /* ContentView.swift in Sources */,
@@ -294,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0827AC102AC96ECB00DF9A7F /* DividerView.swift in Sources */,
 				08827E722AC8D4EB00E46115 /* TimeView.swift in Sources */,
 				08827E732AC8D4EB00E46115 /* DayView.swift in Sources */,
 				08827E6E2AC8D4EB00E46115 /* DigitView.swift in Sources */,

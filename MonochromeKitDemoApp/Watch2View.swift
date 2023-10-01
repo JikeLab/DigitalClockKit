@@ -23,8 +23,8 @@ struct Watch2View: View {
                 .fill(Color(red: (222 / 255), green: (223 / 255), blue: (218 / 255)).gradient.shadow(.inner(color: .black.opacity(0.6), radius: 1, x: 0, y: 1)))
             VStack(alignment: .trailing, spacing: 0) {
                 HStack(spacing: 0) {
-                    WeekdayView(componentSize: mediumComponentSize, weekday: weekday, shorten: true)
-                    DigitView(value: 12, componentSize: CGSize(width: 24, height: 25))
+                    WeekdayView(edition: .digit, componentSize: mediumComponentSize, weekday: weekday)
+                    DigitView(type: .space, componentSize: CGSize(width: 24, height: 25))
                     DayView(componentSize: mediumComponentSize, month: nil, day: day)
                 }
                 .padding(.trailing, 10)

@@ -83,20 +83,51 @@ enum WeekdayType: Int {
             ]
         }
     }
+
+    var digitTypes: [DigitType] {
+        switch self {
+        case .sunday:
+            return [.s, .u]
+        case .monday:
+            return [.m, .o]
+        case .tuesday:
+            return [.t, .u]
+        case .wednesday:
+            return [.w, .e]
+        case .thursday:
+            return [.t, .h]
+        case .friday:
+            return [.f, .r]
+        case .saturday:
+            return [.s, .a]
+        }
+    }
 }
 
 struct WeekdayView: View {
-
+    enum Edition {
+        case matrix
+        case digit
+    }
+    
+    let edition: Edition
     let componentSize: CGSize?
     let weekday: Int
-    let shorten: Bool
 
     var body: some View {
         if let weekdayType = WeekdayType(rawValue: weekday) {
-            HStack {
-                let coordinateGrid = shorten ? weekdayType.coordinateGrid.dropLast() : weekdayType.coordinateGrid
-                ForEach(coordinateGrid, id: \.self) { coordinates in
-                    MatrixView(coordinates: coordinates, maxMatrix: .init(x: 4, y: 4), componentSize: componentSize ?? defaultComponentSize, color: Color.black, margin: 0)
+            switch edition {
+            case .matrix:
+                HStack {
+                    ForEach(weekdayType.coordinateGrid, id: \.self) { coordinates in
+                        MatrixView(coordinates: coordinates, maxMatrix: .init(x: 4, y: 4), componentSize: componentSize ?? defaultComponentSize, color: Color.black, margin: 0)
+                    }
+                }
+            case .digit:
+                HStack {
+                    ForEach(weekdayType.digitTypes, id: \.self) { type in
+                        DigitView(type: type, componentSize: componentSize ?? defaultComponentSize)
+                    }
                 }
             }
         }
@@ -107,51 +138,51 @@ struct WeekdayView: View {
     VStack {
         HStack {
             Spacer()
-            WeekdayView(componentSize: nil, weekday: 1, shorten: false)
+            WeekdayView(edition: .matrix, componentSize: nil, weekday: 1)
             Spacer()
-            WeekdayView(componentSize: nil, weekday: 1, shorten: true)
-            Spacer()
-        }
-        HStack {
-            Spacer()
-            WeekdayView(componentSize: nil, weekday: 2, shorten: false)
-            Spacer()
-            WeekdayView(componentSize: nil, weekday: 2, shorten: true)
+            WeekdayView(edition: .digit, componentSize: nil, weekday: 1)
             Spacer()
         }
         HStack {
             Spacer()
-            WeekdayView(componentSize: nil, weekday: 3, shorten: false)
+            WeekdayView(edition: .matrix, componentSize: nil, weekday: 2)
             Spacer()
-            WeekdayView(componentSize: nil, weekday: 3, shorten: true)
-            Spacer()
-        }
-        HStack {
-            Spacer()
-            WeekdayView(componentSize: nil, weekday: 4, shorten: false)
-            Spacer()
-            WeekdayView(componentSize: nil, weekday: 4, shorten: true)
+            WeekdayView(edition: .digit, componentSize: nil, weekday: 2)
             Spacer()
         }
         HStack {
             Spacer()
-            WeekdayView(componentSize: nil, weekday: 5, shorten: false)
+            WeekdayView(edition: .matrix, componentSize: nil, weekday: 3)
             Spacer()
-            WeekdayView(componentSize: nil, weekday: 5, shorten: true)
-            Spacer()
-        }
-        HStack {
-            Spacer()
-            WeekdayView(componentSize: nil, weekday: 6, shorten: false)
-            Spacer()
-            WeekdayView(componentSize: nil, weekday: 6, shorten: true)
+            WeekdayView(edition: .digit, componentSize: nil, weekday: 3)
             Spacer()
         }
         HStack {
             Spacer()
-            WeekdayView(componentSize: nil, weekday: 7, shorten: false)
+            WeekdayView(edition: .matrix, componentSize: nil, weekday: 4)
             Spacer()
-            WeekdayView(componentSize: nil, weekday: 7, shorten: true)
+            WeekdayView(edition: .digit, componentSize: nil, weekday: 4)
+            Spacer()
+        }
+        HStack {
+            Spacer()
+            WeekdayView(edition: .matrix, componentSize: nil, weekday: 5)
+            Spacer()
+            WeekdayView(edition: .digit, componentSize: nil, weekday: 5)
+            Spacer()
+        }
+        HStack {
+            Spacer()
+            WeekdayView(edition: .matrix, componentSize: nil, weekday: 6)
+            Spacer()
+            WeekdayView(edition: .digit, componentSize: nil, weekday: 6)
+            Spacer()
+        }
+        HStack {
+            Spacer()
+            WeekdayView(edition: .matrix, componentSize: nil, weekday: 7)
+            Spacer()
+            WeekdayView(edition: .digit, componentSize: nil, weekday: 7)
             Spacer()
         }
     }

@@ -10,7 +10,7 @@ import SwiftUI
 struct TimeView: View {
     let componentSize: CGSize?
     let timeComponentSize: CGSize?
-    let hasSecondDivider: Bool?
+    let hasSecondDivider: Bool
     let hasSecond: Bool
     let hasMiliSecond: Bool
     let hour: Int
@@ -21,16 +21,18 @@ struct TimeView: View {
     var body: some View {
         HStack(alignment: .bottom) {
             NumberView(value: hour, numberOfDigits: 2, zeroPadding: nil, componentSize: timeComponentSize ?? componentSize ?? defaultComponentSize)
-            DigitView(value: 10, componentSize: timeComponentSize ?? componentSize ?? defaultComponentSize)
+            DividerView(componentSize: timeComponentSize ?? componentSize ?? defaultComponentSize)
             NumberView(value: minute, numberOfDigits: 2, zeroPadding: true, componentSize: timeComponentSize ?? componentSize ?? defaultComponentSize)
-            if let hasSecondDivider {
-                DigitView(value: hasSecondDivider ? 10 : 12, componentSize: componentSize ?? defaultComponentSize)
+            if hasSecondDivider {
+                DividerView(componentSize: componentSize ?? defaultComponentSize)
+            } else if let space = DigitType(rawValue: 11) {
+                DigitView(type: space, componentSize: componentSize ?? defaultComponentSize)
             }
             if hasSecond {
                 NumberView(value: second, numberOfDigits: 2, zeroPadding: true, componentSize: componentSize ?? defaultComponentSize)
             }
             if hasMiliSecond {
-                DigitView(value: 12, componentSize: componentSize ?? defaultComponentSize)
+                DigitView(type: .space, componentSize: componentSize ?? defaultComponentSize)
                 NumberView(value: miliSecond, numberOfDigits: 2, zeroPadding: true, componentSize: componentSize ?? defaultComponentSize)
             }
         }

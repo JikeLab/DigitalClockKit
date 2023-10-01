@@ -33,7 +33,7 @@ struct ContentView: View {
                     NavigationLink(destination: TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: true, hasSecond: true, hasMiliSecond: true, hour: hour, minute: minute, second: second, miliSecond: miliSecond)) {
                         Text("Time")
                     }
-                    NavigationLink(destination: WeekdayView(componentSize: nil, weekday: weekday, shorten: false)) {
+                    NavigationLink(destination: WeekdayView(edition: .matrix, componentSize: nil, weekday: weekday)) {
                         Text("Weekday")
                     }
                 } header: {

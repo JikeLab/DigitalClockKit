@@ -16,7 +16,7 @@ struct DayView: View {
         HStack {
             if let month {
                 NumberView(value: month, numberOfDigits: 2, zeroPadding: nil, componentSize: componentSize ?? defaultComponentSize)
-                DigitView(value: 11, componentSize: componentSize ?? defaultComponentSize)
+                DigitView(type: .hyphn, componentSize: componentSize ?? defaultComponentSize)
             }
             NumberView(value: day, numberOfDigits: 2, zeroPadding: (month != nil), componentSize: componentSize ?? defaultComponentSize)
         }
