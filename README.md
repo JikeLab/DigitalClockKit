@@ -1,4 +1,4 @@
 # MonochromeKit
 Monochrome Liquid-Crystal Display UI
 
-<img width="400" src="https://github.com/JikeLab/MonochromeKit/assets/33272228/f65ea487-0994-4290-86d0-38dbc6904b7d">
+<img width="400" src="https://github.com/JikeLab/MonochromeKit/assets/33272228/29ee540f-1e4e-41bb-b075-0bc483583aae">
