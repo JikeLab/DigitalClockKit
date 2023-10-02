@@ -71,7 +71,7 @@ enum DigitType: Int {
         case .o:
             return [.top, .leftTop, .leftBottom, .rightTop, .rightBottom, .bottom]
         case .r:
-            return [.top, .leftTop, .leftBottom, .middle, .rightTop, .rightBottom]
+            return [.top, .leftTop, .leftBottom, .middle, .rightTop, .rightBottom, .outsideLeftTop]
         case .s:
             return [.top, .leftTop, .middle, .rightBottom, .bottom]
         case .t:
@@ -85,7 +85,7 @@ enum DigitType: Int {
 }
 
 struct PathFlags: OptionSet {
-    let rawValue: Int
+    let rawValue: Int16
     static let top = PathFlags(rawValue: 1 << 0)
     static let rightTop = PathFlags(rawValue: 1 << 1)
     static let rightBottom = PathFlags(rawValue: 1 << 2)
@@ -94,6 +94,7 @@ struct PathFlags: OptionSet {
     static let leftBottom = PathFlags(rawValue: 1 << 5)
     static let middle = PathFlags(rawValue: 1 << 6)
     static let center = PathFlags(rawValue: 1 << 7)
+    static let outsideLeftTop = PathFlags(rawValue: 1 << 8)
 }
 
 struct DigitView: View {
@@ -102,7 +103,7 @@ struct DigitView: View {
 
     var body: some View {
         ZStack {
-            DigitContentView(type: type, componentSize: componentSize, inset: 1, margin: 1, color: Color.black)
+            DigitContentView(type: type, componentSize: componentSize, color: Color.black)
         }
     }
 }
@@ -110,13 +111,13 @@ struct DigitView: View {
 private struct DigitContentView: View {
     let type: DigitType
     let componentSize: CGSize
-    let inset: CGFloat
-    let margin: CGFloat
     let color: Color
 
     var body: some View {
         ZStack {
-            let lineWidth = (componentSize.width - inset * 2) / 3.5
+            let inset = componentSize.width / 18
+            let margin = componentSize.width / 18
+            let lineWidth = componentSize.width / 3.5
             if type.paths.contains(.top) {
                 // top
                 Path { path in
@@ -211,6 +212,16 @@ private struct DigitContentView: View {
                     path.addLine(to: CGPoint(x: (componentSize.width / 2 - lineWidth / 2), y: (componentSize.height - lineWidth - margin)))
                     path.addLine(to: CGPoint(x: (componentSize.width / 2 - lineWidth / 2), y: (componentSize.height / 2 + lineWidth / 2 + margin)))
                     
+                }
+                .fill(color)
+            }
+            if type.paths.contains(.outsideLeftTop) {
+                // outsideLeftTop
+                Path { path in
+                    path.move(to: CGPoint(x: 0, y: inset))
+                    path.addLine(to: CGPoint(x: -(componentSize.width / 2), y: inset))
+                    path.addLine(to: CGPoint(x: -(componentSize.width / 2 - lineWidth), y: (lineWidth + inset)))
+                    path.addLine(to: CGPoint(x: 0, y: (lineWidth + inset)))
                 }
                 .fill(color)
             }
