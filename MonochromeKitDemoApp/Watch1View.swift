@@ -346,6 +346,18 @@ struct Watch1View: View {
                             DayView(componentSize: smallComponentSize, month: month, day: day)
                         }
 
+                    case .alarm:
+                        HStack(spacing: 0) {
+                            TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: false, hasSecond: false, hasMiliSecond: false, hour: 10, minute: 0, second: 0, miliSecond: 0)
+                            DigitView(type: .hyphn, componentSize: defaultComponentSize)
+                            DigitView(type: .one, componentSize: defaultComponentSize)
+                        }
+                        Spacer()
+                        HStack(spacing: 0) {
+                            TimeView(componentSize: smallComponentSize, timeComponentSize: nil, hasSecondDivider: false, hasSecond: false, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond)
+                            Spacer()
+                        }
+
                     case .stopWatch:
                         let interval = date.timeIntervalSince(baseDate)
                         let h = Int(interval / (60 * 60))
