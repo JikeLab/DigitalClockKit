@@ -1,6 +1,6 @@
 //
 //  WeekdayView.swift
-//  MonochromeKit
+//  MonoDisplayKit
 //
 //  Created by Atsushi Jike on 2023/09/04.
 //

@@ -1,6 +1,6 @@
 //
 //  DividerView.swift
-//  MonochromeKit
+//  MonoDisplayKit
 //
 //  Created by Atsushi Jike on 2023/10/01.
 //

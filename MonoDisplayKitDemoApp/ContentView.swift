@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  MonochromeKit
+//  MonoDisplayKit
 //
 //  Created by Atsushi Jike on 2023/08/20.
 //

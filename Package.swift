@@ -4,20 +4,20 @@
 import PackageDescription
 
 let package = Package(
-    name: "MonochromeKit",
+    name: "MonoDisplayKit",
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "MonochromeKit",
-            targets: ["MonochromeKit"]),
+            name: "MonoDisplayKit",
+            targets: ["MonoDisplayKit"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "MonochromeKit"),
+            name: "MonoDisplayKit"),
         .testTarget(
-            name: "MonochromeKitTests",
-            dependencies: ["MonochromeKit"]),
+            name: "MonoDisplayKitTests",
+            dependencies: ["MonoDisplayKit"]),
     ]
 )

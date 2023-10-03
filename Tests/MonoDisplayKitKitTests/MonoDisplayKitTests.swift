@@ -1,7 +1,7 @@
 import XCTest
-@testable import MonochromeKit
+@testable import MonoDisplayKit
 
-final class MonochromeKitTests: XCTestCase {
+final class MonoDisplayKitTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest
