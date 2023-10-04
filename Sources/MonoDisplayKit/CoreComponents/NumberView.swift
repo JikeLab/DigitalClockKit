@@ -35,12 +35,6 @@ struct NumberView: View {
     }
 }
 
-extension BinaryInteger {
-    var digits: [Int] {
-        String(describing: self).compactMap { Int(String($0)) }
-    }
-}
-
 #Preview {
     VStack {
         NumberView(value: 2023, numberOfDigits: 4, zeroPadding: nil, componentSize: defaultComponentSize)

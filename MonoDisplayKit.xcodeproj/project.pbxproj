@@ -35,6 +35,10 @@
 		08827E762AC8D50200E46115 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08827E752AC8D50200E46115 /* Package.swift */; };
 		08827E782AC8D50F00E46115 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 08827E772AC8D50F00E46115 /* README.md */; };
 		08827E7C2AC8D5AC00E46115 /* MonoDisplayKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08827E7B2AC8D5AB00E46115 /* MonoDisplayKitTests.swift */; };
+		089BAEC32ACCC1B90000F06B /* DigitContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089BAEC22ACCC1B90000F06B /* DigitContainerView.swift */; };
+		089BAEC52ACCC2190000F06B /* DigitContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089BAEC22ACCC1B90000F06B /* DigitContainerView.swift */; };
+		089BAEC82ACCC2680000F06B /* BinaryInteger+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089BAEC72ACCC2680000F06B /* BinaryInteger+Extension.swift */; };
+		089BAEC92ACCC2680000F06B /* BinaryInteger+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089BAEC72ACCC2680000F06B /* BinaryInteger+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +63,8 @@
 		08827E752AC8D50200E46115 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		08827E772AC8D50F00E46115 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		08827E7B2AC8D5AB00E46115 /* MonoDisplayKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonoDisplayKitTests.swift; sourceTree = "<group>"; };
+		089BAEC22ACCC1B90000F06B /* DigitContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitContainerView.swift; sourceTree = "<group>"; };
+		089BAEC72ACCC2680000F06B /* BinaryInteger+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryInteger+Extension.swift"; sourceTree = "<group>"; };
 		08EEA3A32A9205310086826E /* MonoDisplayKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonoDisplayKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,9 +119,10 @@
 		08827E602AC8D4EB00E46115 /* MonoDisplayKit */ = {
 			isa = PBXGroup;
 			children = (
+				089BAEC62ACCC24E0000F06B /* Extension */,
+				08827E6B2AC8D4EB00E46115 /* MonoDisplayKit.swift */,
 				08827E612AC8D4EB00E46115 /* CoreComponents */,
 				08827E662AC8D4EB00E46115 /* DateComponents */,
-				08827E6B2AC8D4EB00E46115 /* MonoDisplayKit.swift */,
 			);
 			path = MonoDisplayKit;
 			sourceTree = "<group>";
@@ -125,6 +132,7 @@
 			children = (
 				08827E652AC8D4EB00E46115 /* Coordinate.swift */,
 				08827E642AC8D4EB00E46115 /* DigitView.swift */,
+				089BAEC22ACCC1B90000F06B /* DigitContainerView.swift */,
 				0827AC0F2AC96ECB00DF9A7F /* DividerView.swift */,
 				08827E622AC8D4EB00E46115 /* MatrixView.swift */,
 				08827E632AC8D4EB00E46115 /* NumberView.swift */,
@@ -157,6 +165,14 @@
 				08827E7B2AC8D5AB00E46115 /* MonoDisplayKitTests.swift */,
 			);
 			path = MonoDisplayKitKitTests;
+			sourceTree = "<group>";
+		};
+		089BAEC62ACCC24E0000F06B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				089BAEC72ACCC2680000F06B /* BinaryInteger+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		08EEA39A2A9205310086826E = {
@@ -279,12 +295,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				089BAEC92ACCC2680000F06B /* BinaryInteger+Extension.swift in Sources */,
 				081A715E2AC8DCFA00A810D1 /* MatrixView.swift in Sources */,
 				081A715F2AC8DCFA00A810D1 /* NumberView.swift in Sources */,
 				081A71602AC8DCFA00A810D1 /* DigitView.swift in Sources */,
 				081A71612AC8DCFA00A810D1 /* Coordinate.swift in Sources */,
 				081A71622AC8DCFA00A810D1 /* WeekdayView.swift in Sources */,
 				081A71632AC8DCFA00A810D1 /* AgeView.swift in Sources */,
+				089BAEC52ACCC2190000F06B /* DigitContainerView.swift in Sources */,
 				0827AC112AC96ECB00DF9A7F /* DividerView.swift in Sources */,
 				081A71642AC8DCFA00A810D1 /* TimeView.swift in Sources */,
 				081A71652AC8DCFA00A810D1 /* DayView.swift in Sources */,
@@ -300,6 +318,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0827AC102AC96ECB00DF9A7F /* DividerView.swift in Sources */,
+				089BAEC82ACCC2680000F06B /* BinaryInteger+Extension.swift in Sources */,
+				089BAEC32ACCC1B90000F06B /* DigitContainerView.swift in Sources */,
 				08827E722AC8D4EB00E46115 /* TimeView.swift in Sources */,
 				08827E732AC8D4EB00E46115 /* DayView.swift in Sources */,
 				08827E6E2AC8D4EB00E46115 /* DigitView.swift in Sources */,

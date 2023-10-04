@@ -346,6 +346,12 @@ struct Watch1View: View {
                             DayView(componentSize: smallComponentSize, month: month, day: day)
                         }
 
+                    case .dataBank:
+                        VStack {
+                            DigitContainerView(value: "012-3456-7890", componentSize: mediumComponentSize, spacing: 0.4)
+                            Spacer()
+                        }
+
                     case .alarm:
                         HStack(spacing: 0) {
                             TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: false, hasSecond: false, hasMiliSecond: false, hour: 10, minute: 0, second: 0, miliSecond: 0)
