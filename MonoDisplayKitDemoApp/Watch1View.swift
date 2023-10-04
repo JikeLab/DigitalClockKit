@@ -352,6 +352,23 @@ struct Watch1View: View {
                             Spacer()
                         }
 
+                    case .calculator:
+                        let dualYear = Calendar.current.component(.year, from: Date(timeInterval: dualTimeInterval, since: date))
+                        let dualMonth = Calendar.current.component(.month, from: Date(timeInterval: dualTimeInterval, since: date))
+                        let dualDay = Calendar.current.component(.day, from: Date(timeInterval: dualTimeInterval, since: date))
+                        VStack() {
+                            HStack(spacing: 0) {
+                                Spacer()
+                                DigitContainerView(value: "123.45", componentSize: defaultComponentSize, spacing: 1)
+                            }
+                            Spacer()
+                            HStack(spacing: 0) {
+                                AgeView(componentSize: smallComponentSize, year: dualYear)
+                                Spacer()
+                                DayView(componentSize: smallComponentSize, month: dualMonth, day: dualDay)
+                            }
+                        }
+
                     case .alarm:
                         HStack(spacing: 0) {
                             TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: false, hasSecond: false, hasMiliSecond: false, hour: 10, minute: 0, second: 0, miliSecond: 0)
