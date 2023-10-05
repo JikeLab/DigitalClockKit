@@ -39,6 +39,8 @@
 		089BAEC52ACCC2190000F06B /* DigitContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089BAEC22ACCC1B90000F06B /* DigitContainerView.swift */; };
 		089BAEC82ACCC2680000F06B /* BinaryInteger+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089BAEC72ACCC2680000F06B /* BinaryInteger+Extension.swift */; };
 		089BAEC92ACCC2680000F06B /* BinaryInteger+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089BAEC72ACCC2680000F06B /* BinaryInteger+Extension.swift */; };
+		089BAECB2ACEB22A0000F06B /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089BAECA2ACEB22A0000F06B /* Mode.swift */; };
+		089BAECC2ACEB22A0000F06B /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089BAECA2ACEB22A0000F06B /* Mode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,7 @@
 		08827E7B2AC8D5AB00E46115 /* MonoDisplayKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonoDisplayKitTests.swift; sourceTree = "<group>"; };
 		089BAEC22ACCC1B90000F06B /* DigitContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitContainerView.swift; sourceTree = "<group>"; };
 		089BAEC72ACCC2680000F06B /* BinaryInteger+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryInteger+Extension.swift"; sourceTree = "<group>"; };
+		089BAECA2ACEB22A0000F06B /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		08EEA3A32A9205310086826E /* MonoDisplayKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonoDisplayKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -135,6 +138,7 @@
 				089BAEC22ACCC1B90000F06B /* DigitContainerView.swift */,
 				0827AC0F2AC96ECB00DF9A7F /* DividerView.swift */,
 				08827E622AC8D4EB00E46115 /* MatrixView.swift */,
+				089BAECA2ACEB22A0000F06B /* Mode.swift */,
 				08827E632AC8D4EB00E46115 /* NumberView.swift */,
 			);
 			path = CoreComponents;
@@ -305,6 +309,7 @@
 				089BAEC52ACCC2190000F06B /* DigitContainerView.swift in Sources */,
 				0827AC112AC96ECB00DF9A7F /* DividerView.swift in Sources */,
 				081A71642AC8DCFA00A810D1 /* TimeView.swift in Sources */,
+				089BAECC2ACEB22A0000F06B /* Mode.swift in Sources */,
 				081A71652AC8DCFA00A810D1 /* DayView.swift in Sources */,
 				081A71502AC8DBB700A810D1 /* ContentView.swift in Sources */,
 				081A714E2AC8DBB700A810D1 /* MonoDisplayKitDemoAppApp.swift in Sources */,
@@ -328,6 +333,7 @@
 				08827E742AC8D4EB00E46115 /* MonoDisplayKit.swift in Sources */,
 				08827E6C2AC8D4EB00E46115 /* MatrixView.swift in Sources */,
 				08827E712AC8D4EB00E46115 /* AgeView.swift in Sources */,
+				089BAECB2ACEB22A0000F06B /* Mode.swift in Sources */,
 				08827E702AC8D4EB00E46115 /* WeekdayView.swift in Sources */,
 				08827E762AC8D50200E46115 /* Package.swift in Sources */,
 				08827E6D2AC8D4EB00E46115 /* NumberView.swift in Sources */,

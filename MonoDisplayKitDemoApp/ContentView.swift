@@ -23,28 +23,62 @@ struct ContentView: View {
                 let second = Calendar.current.component(.second, from: currentDate)
                 let miliSecond = Calendar.current.component(.nanosecond, from: currentDate) / 10000000
 
+                // TODO: Components のプレゼン方法を変える
                 Section {
-                    NavigationLink(destination: AgeView(componentSize: nil, year: year)) {
-                        Text("Age")
+                    HStack {
+                        Text("Year")
+                        Spacer()
+                        AgeView(componentSize: mediumComponentSize, year: year)
                     }
-                    NavigationLink(destination: DayView(componentSize: nil, month: month, day: day)) {
+                    HStack {
                         Text("Day")
+                        Spacer()
+                        DayView(componentSize: mediumComponentSize, month: month, day: day)
                     }
-                    NavigationLink(destination: TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: true, hasSecond: true, hasMiliSecond: true, hour: hour, minute: minute, second: second, miliSecond: miliSecond)) {
+                    HStack {
                         Text("Time")
+                        Spacer()
+                        TimeView(componentSize: mediumComponentSize, timeComponentSize: nil, hasSecondDivider: true, hasSecond: true, hasMiliSecond: true, hour: hour, minute: minute, second: second, miliSecond: miliSecond)
                     }
-                    NavigationLink(destination: WeekdayView(edition: .matrix, componentSize: nil, weekday: weekday)) {
+                    HStack {
                         Text("Weekday")
+                        Spacer()
+                        HStack {
+                            WeekdayView(edition: .matrix, componentSize: mediumComponentSize, weekday: weekday)
+                                .padding(.trailing, 10)
+                            WeekdayView(edition: .digit, componentSize: mediumComponentSize, weekday: weekday)
+                        }
+                    }
+                    HStack {
+                        Text("Telephone")
+                        Spacer()
+                        DigitContainerView(value: "012-3456-7890", componentSize: mediumComponentSize, spacing: 0.4)
+                    }
+                    HStack {
+                        Text("Number")
+                        Spacer()
+                        DigitContainerView(value: "123.45", componentSize: defaultComponentSize, spacing: 1)
+                    }
+                    HStack {
+                        Text("Icons")
+                        Spacer()
+                        HStack {
+                            MatrixView(coordinates: Mode.dataBank.iconCoordinates, maxMatrix: nil, componentSize: CGSize(width:18, height: 18), color: Color.black, margin: 0)
+                            MatrixView(coordinates: Mode.calculator.iconCoordinates, maxMatrix: nil, componentSize: CGSize(width:18, height: 18), color: Color.black, margin: 0)
+                            MatrixView(coordinates: Mode.alarm.iconCoordinates, maxMatrix: nil, componentSize: CGSize(width:18, height: 18), color: Color.black, margin: 0)
+                            MatrixView(coordinates: Mode.stopWatch.iconCoordinates, maxMatrix: nil, componentSize: CGSize(width:18, height: 18), color: Color.black, margin: 0)
+                            MatrixView(coordinates: Mode.dualTime.iconCoordinates, maxMatrix: nil, componentSize: CGSize(width:18, height: 18), color: Color.black, margin: 0)
+                        }
                     }
                 } header: {
-                    Text("DATE COMPONENTS")
+                    Text("COMPONENTS")
                 }
                 Section {
                     HStack {
                         Spacer()
                         ScrollView(.horizontal) {
                             LazyHStack(spacing: 0) {
-                                ForEach(Watch1View.Mode.allCases, id: \.self) { mode in
+                                ForEach(Mode.allCases, id: \.self) { mode in
                                     Watch1View(date: $currentDate, mode: mode)
                                         .frame(width: 220)
                                 }
@@ -73,7 +107,7 @@ struct ContentView: View {
                 }
             }
             .listStyle(InsetGroupedListStyle())
-            .navigationTitle("Liquid Crystal Display")
+            .navigationTitle("MonoDisplayKit")
         }.onReceive(timer){ value in
             currentDate = value
         }
