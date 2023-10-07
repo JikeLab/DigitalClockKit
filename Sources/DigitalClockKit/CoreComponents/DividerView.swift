@@ -1,6 +1,6 @@
 //
 //  DividerView.swift
-//  MonoDisplayKit
+//  DigitalClockKit
 //
 //  Created by Atsushi Jike on 2023/10/01.
 //

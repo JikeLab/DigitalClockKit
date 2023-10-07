@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  MonoDisplayKit
+//  DigitalClockKit
 //
 //  Created by Atsushi Jike on 2023/08/20.
 //
@@ -107,7 +107,7 @@ struct ContentView: View {
                 }
             }
             .listStyle(InsetGroupedListStyle())
-            .navigationTitle("MonoDisplayKit")
+            .navigationTitle("DigitalClockKit")
         }.onReceive(timer){ value in
             currentDate = value
         }

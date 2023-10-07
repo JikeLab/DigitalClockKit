@@ -1,7 +1,7 @@
 import XCTest
-@testable import MonoDisplayKit
+@testable import DigitalClockKit
 
-final class MonoDisplayKitTests: XCTestCase {
+final class DigitalClockKitTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest

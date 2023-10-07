@@ -1,6 +1,6 @@
 //
 //  Watch1View.swift
-//  MonoDisplayKit
+//  DigitalClockKit
 //
 //  Created by Atsushi Jike on 2023/09/12.
 //
@@ -135,9 +135,6 @@ struct Watch1View: View {
                             Spacer()
                             DayView(componentSize: smallComponentSize, month: dualMonth, day: dualDay)
                         }
-                        
-                    default:
-                        Spacer()
                     }
                 }
                 .padding(10)

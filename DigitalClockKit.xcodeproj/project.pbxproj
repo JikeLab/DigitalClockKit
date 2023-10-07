@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		081A714E2AC8DBB700A810D1 /* MonoDisplayKitDemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A714D2AC8DBB700A810D1 /* MonoDisplayKitDemoAppApp.swift */; };
+		081A714E2AC8DBB700A810D1 /* DigitalClockKitDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A714D2AC8DBB700A810D1 /* DigitalClockKitDemoApp.swift */; };
 		081A71502AC8DBB700A810D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A714F2AC8DBB700A810D1 /* ContentView.swift */; };
 		081A71522AC8DBB800A810D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 081A71512AC8DBB800A810D1 /* Assets.xcassets */; };
 		081A71562AC8DBB800A810D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 081A71552AC8DBB800A810D1 /* Preview Assets.xcassets */; };
@@ -31,10 +31,10 @@
 		08827E712AC8D4EB00E46115 /* AgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08827E682AC8D4EB00E46115 /* AgeView.swift */; };
 		08827E722AC8D4EB00E46115 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08827E692AC8D4EB00E46115 /* TimeView.swift */; };
 		08827E732AC8D4EB00E46115 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08827E6A2AC8D4EB00E46115 /* DayView.swift */; };
-		08827E742AC8D4EB00E46115 /* MonoDisplayKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08827E6B2AC8D4EB00E46115 /* MonoDisplayKit.swift */; };
+		08827E742AC8D4EB00E46115 /* DigitalClockKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08827E6B2AC8D4EB00E46115 /* DigitalClockKit.swift */; };
 		08827E762AC8D50200E46115 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08827E752AC8D50200E46115 /* Package.swift */; };
 		08827E782AC8D50F00E46115 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 08827E772AC8D50F00E46115 /* README.md */; };
-		08827E7C2AC8D5AC00E46115 /* MonoDisplayKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08827E7B2AC8D5AB00E46115 /* MonoDisplayKitTests.swift */; };
+		08827E7C2AC8D5AC00E46115 /* DigitalClockKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08827E7B2AC8D5AB00E46115 /* DigitalClockKitTests.swift */; };
 		089BAEC32ACCC1B90000F06B /* DigitContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089BAEC22ACCC1B90000F06B /* DigitContainerView.swift */; };
 		089BAEC52ACCC2190000F06B /* DigitContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089BAEC22ACCC1B90000F06B /* DigitContainerView.swift */; };
 		089BAEC82ACCC2680000F06B /* BinaryInteger+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089BAEC72ACCC2680000F06B /* BinaryInteger+Extension.swift */; };
@@ -44,11 +44,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		081A714B2AC8DBB700A810D1 /* MonoDisplayKitDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonoDisplayKitDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		081A714D2AC8DBB700A810D1 /* MonoDisplayKitDemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonoDisplayKitDemoAppApp.swift; sourceTree = "<group>"; };
+		081A714B2AC8DBB700A810D1 /* DigitalClockKitDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalClockKitDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		081A714D2AC8DBB700A810D1 /* DigitalClockKitDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalClockKitDemoApp.swift; sourceTree = "<group>"; };
 		081A714F2AC8DBB700A810D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		081A71512AC8DBB800A810D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		081A71532AC8DBB800A810D1 /* MonoDisplayKitDemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MonoDisplayKitDemoApp.entitlements; sourceTree = "<group>"; };
+		081A71532AC8DBB800A810D1 /* DigitalClockKitDemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DigitalClockKitDemoApp.entitlements; sourceTree = "<group>"; };
 		081A71552AC8DBB800A810D1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		081A715A2AC8DC3000A810D1 /* Watch2View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Watch2View.swift; sourceTree = "<group>"; };
 		081A715B2AC8DC3000A810D1 /* Watch1View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Watch1View.swift; sourceTree = "<group>"; };
@@ -61,14 +61,14 @@
 		08827E682AC8D4EB00E46115 /* AgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeView.swift; sourceTree = "<group>"; };
 		08827E692AC8D4EB00E46115 /* TimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		08827E6A2AC8D4EB00E46115 /* DayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
-		08827E6B2AC8D4EB00E46115 /* MonoDisplayKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonoDisplayKit.swift; sourceTree = "<group>"; };
+		08827E6B2AC8D4EB00E46115 /* DigitalClockKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalClockKit.swift; sourceTree = "<group>"; };
 		08827E752AC8D50200E46115 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		08827E772AC8D50F00E46115 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		08827E7B2AC8D5AB00E46115 /* MonoDisplayKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonoDisplayKitTests.swift; sourceTree = "<group>"; };
+		08827E7B2AC8D5AB00E46115 /* DigitalClockKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalClockKitTests.swift; sourceTree = "<group>"; };
 		089BAEC22ACCC1B90000F06B /* DigitContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitContainerView.swift; sourceTree = "<group>"; };
 		089BAEC72ACCC2680000F06B /* BinaryInteger+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryInteger+Extension.swift"; sourceTree = "<group>"; };
 		089BAECA2ACEB22A0000F06B /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
-		08EEA3A32A9205310086826E /* MonoDisplayKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonoDisplayKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		08EEA3A32A9205310086826E /* DigitalClockKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalClockKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,18 +89,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		081A714C2AC8DBB700A810D1 /* MonoDisplayKitDemoApp */ = {
+		081A714C2AC8DBB700A810D1 /* DigitalClockKitDemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				081A714D2AC8DBB700A810D1 /* MonoDisplayKitDemoAppApp.swift */,
+				081A714D2AC8DBB700A810D1 /* DigitalClockKitDemoApp.swift */,
 				081A714F2AC8DBB700A810D1 /* ContentView.swift */,
 				081A715B2AC8DC3000A810D1 /* Watch1View.swift */,
 				081A715A2AC8DC3000A810D1 /* Watch2View.swift */,
 				081A71512AC8DBB800A810D1 /* Assets.xcassets */,
-				081A71532AC8DBB800A810D1 /* MonoDisplayKitDemoApp.entitlements */,
+				081A71532AC8DBB800A810D1 /* DigitalClockKitDemoApp.entitlements */,
 				081A71542AC8DBB800A810D1 /* Preview Content */,
 			);
-			path = MonoDisplayKitDemoApp;
+			path = DigitalClockKitDemoApp;
 			sourceTree = "<group>";
 		};
 		081A71542AC8DBB800A810D1 /* Preview Content */ = {
@@ -114,20 +114,20 @@
 		08827E5F2AC8D4EB00E46115 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				08827E602AC8D4EB00E46115 /* MonoDisplayKit */,
+				08827E602AC8D4EB00E46115 /* DigitalClockKit */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		08827E602AC8D4EB00E46115 /* MonoDisplayKit */ = {
+		08827E602AC8D4EB00E46115 /* DigitalClockKit */ = {
 			isa = PBXGroup;
 			children = (
 				089BAEC62ACCC24E0000F06B /* Extension */,
-				08827E6B2AC8D4EB00E46115 /* MonoDisplayKit.swift */,
+				08827E6B2AC8D4EB00E46115 /* DigitalClockKit.swift */,
 				08827E612AC8D4EB00E46115 /* CoreComponents */,
 				08827E662AC8D4EB00E46115 /* DateComponents */,
 			);
-			path = MonoDisplayKit;
+			path = DigitalClockKit;
 			sourceTree = "<group>";
 		};
 		08827E612AC8D4EB00E46115 /* CoreComponents */ = {
@@ -158,17 +158,17 @@
 		08827E792AC8D5AB00E46115 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				08827E7A2AC8D5AB00E46115 /* MonoDisplayKitKitTests */,
+				08827E7A2AC8D5AB00E46115 /* DigitalClockKitTests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		08827E7A2AC8D5AB00E46115 /* MonoDisplayKitKitTests */ = {
+		08827E7A2AC8D5AB00E46115 /* DigitalClockKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				08827E7B2AC8D5AB00E46115 /* MonoDisplayKitTests.swift */,
+				08827E7B2AC8D5AB00E46115 /* DigitalClockKitTests.swift */,
 			);
-			path = MonoDisplayKitKitTests;
+			path = DigitalClockKitTests;
 			sourceTree = "<group>";
 		};
 		089BAEC62ACCC24E0000F06B /* Extension */ = {
@@ -186,7 +186,7 @@
 				08827E752AC8D50200E46115 /* Package.swift */,
 				08827E5F2AC8D4EB00E46115 /* Sources */,
 				08827E792AC8D5AB00E46115 /* Tests */,
-				081A714C2AC8DBB700A810D1 /* MonoDisplayKitDemoApp */,
+				081A714C2AC8DBB700A810D1 /* DigitalClockKitDemoApp */,
 				08EEA3A42A9205310086826E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -194,8 +194,8 @@
 		08EEA3A42A9205310086826E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				08EEA3A32A9205310086826E /* MonoDisplayKit.app */,
-				081A714B2AC8DBB700A810D1 /* MonoDisplayKitDemoApp.app */,
+				08EEA3A32A9205310086826E /* DigitalClockKit.app */,
+				081A714B2AC8DBB700A810D1 /* DigitalClockKitDemoApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,9 +203,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		081A714A2AC8DBB700A810D1 /* MonoDisplayKitDemoApp */ = {
+		081A714A2AC8DBB700A810D1 /* DigitalClockKitDemoApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 081A71592AC8DBB800A810D1 /* Build configuration list for PBXNativeTarget "MonoDisplayKitDemoApp" */;
+			buildConfigurationList = 081A71592AC8DBB800A810D1 /* Build configuration list for PBXNativeTarget "DigitalClockKitDemoApp" */;
 			buildPhases = (
 				081A71472AC8DBB700A810D1 /* Sources */,
 				081A71482AC8DBB700A810D1 /* Frameworks */,
@@ -215,14 +215,14 @@
 			);
 			dependencies = (
 			);
-			name = MonoDisplayKitDemoApp;
-			productName = MonoDisplayKitDemoApp;
-			productReference = 081A714B2AC8DBB700A810D1 /* MonoDisplayKitDemoApp.app */;
+			name = DigitalClockKitDemoApp;
+			productName = DigitalClockKitDemoApp;
+			productReference = 081A714B2AC8DBB700A810D1 /* DigitalClockKitDemoApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		08EEA3A22A9205310086826E /* MonoDisplayKit */ = {
+		08EEA3A22A9205310086826E /* DigitalClockKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 08EEA3B22A9205350086826E /* Build configuration list for PBXNativeTarget "MonoDisplayKit" */;
+			buildConfigurationList = 08EEA3B22A9205350086826E /* Build configuration list for PBXNativeTarget "DigitalClockKit" */;
 			buildPhases = (
 				08EEA39F2A9205310086826E /* Sources */,
 				08EEA3A02A9205310086826E /* Frameworks */,
@@ -232,9 +232,9 @@
 			);
 			dependencies = (
 			);
-			name = MonoDisplayKit;
-			productName = MonoDisplayKit;
-			productReference = 08EEA3A32A9205310086826E /* MonoDisplayKit.app */;
+			name = DigitalClockKit;
+			productName = DigitalClockKit;
+			productReference = 08EEA3A32A9205310086826E /* DigitalClockKit.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -255,7 +255,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 08EEA39E2A9205310086826E /* Build configuration list for PBXProject "MonoDisplayKit" */;
+			buildConfigurationList = 08EEA39E2A9205310086826E /* Build configuration list for PBXProject "DigitalClockKit" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -268,8 +268,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				08EEA3A22A9205310086826E /* MonoDisplayKit */,
-				081A714A2AC8DBB700A810D1 /* MonoDisplayKitDemoApp */,
+				08EEA3A22A9205310086826E /* DigitalClockKit */,
+				081A714A2AC8DBB700A810D1 /* DigitalClockKitDemoApp */,
 			);
 		};
 /* End PBXProject section */
@@ -312,7 +312,7 @@
 				089BAECC2ACEB22A0000F06B /* Mode.swift in Sources */,
 				081A71652AC8DCFA00A810D1 /* DayView.swift in Sources */,
 				081A71502AC8DBB700A810D1 /* ContentView.swift in Sources */,
-				081A714E2AC8DBB700A810D1 /* MonoDisplayKitDemoAppApp.swift in Sources */,
+				081A714E2AC8DBB700A810D1 /* DigitalClockKitDemoApp.swift in Sources */,
 				081A715D2AC8DC3000A810D1 /* Watch1View.swift in Sources */,
 				081A715C2AC8DC3000A810D1 /* Watch2View.swift in Sources */,
 			);
@@ -329,8 +329,8 @@
 				08827E732AC8D4EB00E46115 /* DayView.swift in Sources */,
 				08827E6E2AC8D4EB00E46115 /* DigitView.swift in Sources */,
 				08827E6F2AC8D4EB00E46115 /* Coordinate.swift in Sources */,
-				08827E7C2AC8D5AC00E46115 /* MonoDisplayKitTests.swift in Sources */,
-				08827E742AC8D4EB00E46115 /* MonoDisplayKit.swift in Sources */,
+				08827E7C2AC8D5AC00E46115 /* DigitalClockKitTests.swift in Sources */,
+				08827E742AC8D4EB00E46115 /* DigitalClockKit.swift in Sources */,
 				08827E6C2AC8D4EB00E46115 /* MatrixView.swift in Sources */,
 				08827E712AC8D4EB00E46115 /* AgeView.swift in Sources */,
 				089BAECB2ACEB22A0000F06B /* Mode.swift in Sources */,
@@ -348,10 +348,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MonoDisplayKitDemoApp/MonoDisplayKitDemoApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = DigitalClockKitDemoApp/DigitalClockKitDemoApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MonoDisplayKitDemoApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"DigitalClockKitDemoApp/Preview Content\"";
 				DEVELOPMENT_TEAM = Y77RDM57S3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -371,7 +371,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.yumemi.MonoDisplayKitDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.yumemi.DigitalClockKitDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -386,10 +386,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MonoDisplayKitDemoApp/MonoDisplayKitDemoApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = DigitalClockKitDemoApp/DigitalClockKitDemoApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MonoDisplayKitDemoApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"DigitalClockKitDemoApp/Preview Content\"";
 				DEVELOPMENT_TEAM = Y77RDM57S3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -409,7 +409,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.yumemi.MonoDisplayKitDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.yumemi.DigitalClockKitDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -538,7 +538,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MonoDisplayKit/MonoDisplayKit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y77RDM57S3;
@@ -560,7 +559,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.yumemi.MonoDisplayKit;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.yumemi.DigitalClockKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -575,7 +574,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MonoDisplayKit/MonoDisplayKit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y77RDM57S3;
@@ -597,7 +595,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.yumemi.MonoDisplayKit;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.yumemi.DigitalClockKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -610,7 +608,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		081A71592AC8DBB800A810D1 /* Build configuration list for PBXNativeTarget "MonoDisplayKitDemoApp" */ = {
+		081A71592AC8DBB800A810D1 /* Build configuration list for PBXNativeTarget "DigitalClockKitDemoApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				081A71572AC8DBB800A810D1 /* Debug */,
@@ -619,7 +617,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		08EEA39E2A9205310086826E /* Build configuration list for PBXProject "MonoDisplayKit" */ = {
+		08EEA39E2A9205310086826E /* Build configuration list for PBXProject "DigitalClockKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				08EEA3B02A9205350086826E /* Debug */,
@@ -628,7 +626,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		08EEA3B22A9205350086826E /* Build configuration list for PBXNativeTarget "MonoDisplayKit" */ = {
+		08EEA3B22A9205350086826E /* Build configuration list for PBXNativeTarget "DigitalClockKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				08EEA3B32A9205350086826E /* Debug */,

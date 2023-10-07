@@ -1,6 +1,6 @@
 //
 //  DigitView.swift
-//  MonoDisplayKit
+//  DigitalClockKit
 //
 //  Created by Atsushi Jike on 2023/09/05.
 //
