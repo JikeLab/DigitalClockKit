@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Watch2View: View {
     @Binding var date: Date
+    let is24Hour: Bool
 
     var body: some View {
         let day = Calendar.current.component(.day, from: date)
@@ -29,7 +30,7 @@ struct Watch2View: View {
                 }
                 .padding(.trailing, 10)
                 .padding(.bottom, 10)
-                TimeView(componentSize: nil, timeComponentSize: largeComponentSize, hasSecondDivider: false, hasSecond: true, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond)
+                TimeView(componentSize: nil, timeComponentSize: largeComponentSize, hasSecondDivider: false, hasSecond: true, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond, is24Hour: is24Hour)
             }
             .padding(10)
         }
@@ -41,8 +42,8 @@ struct Watch2View: View {
     @State var currentDate:Date = Date()
     return VStack {
         Spacer()
-        Watch2View(date: $earlyDate)
-        Watch2View(date: $currentDate)
+        Watch2View(date: $earlyDate, is24Hour: true)
+        Watch2View(date: $currentDate, is24Hour: false)
         Spacer()
     }
     .frame(width: 240)

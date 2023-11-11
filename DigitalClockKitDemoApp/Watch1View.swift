@@ -12,6 +12,7 @@ let baseDate = Date()
 struct Watch1View: View {
     @Binding var date: Date
     let mode: Mode
+    let is24Hour: Bool
     let dualTimeInterval: TimeInterval = -32400
 
     var body: some View {
@@ -64,7 +65,7 @@ struct Watch1View: View {
                         let month = Calendar.current.component(.month, from: date)
                         let day = Calendar.current.component(.day, from: date)
 
-                        TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: false, hasSecond: true, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond)
+                        TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: false, hasSecond: true, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond, is24Hour: is24Hour)
                         Spacer()
                         HStack(spacing: 0) {
                             AgeView(componentSize: smallComponentSize, year: year)
@@ -97,13 +98,13 @@ struct Watch1View: View {
 
                     case .alarm:
                         HStack(spacing: 0) {
-                            TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: false, hasSecond: false, hasMiliSecond: false, hour: 10, minute: 0, second: 0, miliSecond: 0)
+                            TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: false, hasSecond: false, hasMiliSecond: false, hour: 10, minute: 0, second: 0, miliSecond: 0, is24Hour: is24Hour)
                             DigitView(type: .hyphn, componentSize: defaultComponentSize)
                             DigitView(type: .one, componentSize: defaultComponentSize)
                         }
                         Spacer()
                         HStack(spacing: 0) {
-                            TimeView(componentSize: smallComponentSize, timeComponentSize: nil, hasSecondDivider: false, hasSecond: false, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond)
+                            TimeView(componentSize: smallComponentSize, timeComponentSize: nil, hasSecondDivider: false, hasSecond: false, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond, is24Hour: is24Hour)
                             Spacer()
                         }
 
@@ -112,10 +113,10 @@ struct Watch1View: View {
                         let h = Int(interval / (60 * 60))
                         let m = Int((Int(interval) % (60 * 60)) / 60)
                         let s = Int(Int(interval) % 60)
-                        TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: false, hasSecond: true, hasMiliSecond: false, hour: h, minute: m, second: s, miliSecond: 0)
+                        TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: false, hasSecond: true, hasMiliSecond: false, hour: h, minute: m, second: s, miliSecond: 0, is24Hour: is24Hour)
                         Spacer()
                         HStack(spacing: 0) {
-                            TimeView(componentSize: smallComponentSize, timeComponentSize: nil, hasSecondDivider: false, hasSecond: false, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond)
+                            TimeView(componentSize: smallComponentSize, timeComponentSize: nil, hasSecondDivider: false, hasSecond: false, hasMiliSecond: false, hour: hour, minute: minute, second: second, miliSecond: miliSecond, is24Hour: is24Hour)
                             Spacer()
                         }
 
@@ -128,7 +129,7 @@ struct Watch1View: View {
                         let dualSecond = Calendar.current.component(.second, from: Date(timeInterval: dualTimeInterval, since: date))
                         let dualMiliSecond = Calendar.current.component(.nanosecond, from: Date(timeInterval: dualTimeInterval, since: date)) / 10000000
 
-                        TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: false, hasSecond: true, hasMiliSecond: false, hour: dualHour, minute: dualMinute, second: dualSecond, miliSecond: dualMiliSecond)
+                        TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: false, hasSecond: true, hasMiliSecond: false, hour: dualHour, minute: dualMinute, second: dualSecond, miliSecond: dualMiliSecond, is24Hour: is24Hour)
                         Spacer()
                         HStack(spacing: 0) {
                             AgeView(componentSize: smallComponentSize, year: dualYear)
@@ -146,12 +147,12 @@ struct Watch1View: View {
 #Preview {
     @State var currentDate:Date = Date()
     return VStack(spacing: 0) {
-        Watch1View(date: $currentDate, mode: .clock)
-        Watch1View(date: $currentDate, mode: .dataBank)
-        Watch1View(date: $currentDate, mode: .calculator)
-        Watch1View(date: $currentDate, mode: .alarm)
-        Watch1View(date: $currentDate, mode: .stopWatch)
-        Watch1View(date: $currentDate, mode: .dualTime)
+        Watch1View(date: $currentDate, mode: .clock, is24Hour: false)
+        Watch1View(date: $currentDate, mode: .dataBank, is24Hour: false)
+        Watch1View(date: $currentDate, mode: .calculator, is24Hour: false)
+        Watch1View(date: $currentDate, mode: .alarm, is24Hour: false)
+        Watch1View(date: $currentDate, mode: .stopWatch, is24Hour: false)
+        Watch1View(date: $currentDate, mode: .dualTime, is24Hour: false)
     }
     .frame(width: 220)
 }

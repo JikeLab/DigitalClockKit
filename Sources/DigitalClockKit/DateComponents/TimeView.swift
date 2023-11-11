@@ -17,10 +17,11 @@ struct TimeView: View {
     let minute: Int
     let second: Int
     let miliSecond: Int
+    let is24Hour: Bool
 
     var body: some View {
         HStack(alignment: .bottom) {
-            NumberView(value: hour, numberOfDigits: 2, zeroPadding: nil, componentSize: timeComponentSize ?? componentSize ?? defaultComponentSize)
+            NumberView(value: is24Hour ? hour : (hour < 12 ? hour : hour - 12), numberOfDigits: 2, zeroPadding: nil, componentSize: timeComponentSize ?? componentSize ?? defaultComponentSize)
             DividerView(componentSize: timeComponentSize ?? componentSize ?? defaultComponentSize)
             NumberView(value: minute, numberOfDigits: 2, zeroPadding: true, componentSize: timeComponentSize ?? componentSize ?? defaultComponentSize)
             if hasSecondDivider {
@@ -41,7 +42,9 @@ struct TimeView: View {
 
 #Preview {
     VStack {
-        TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: true, hasSecond: true, hasMiliSecond: true, hour: 1, minute: 23, second: 45, miliSecond: 6)
-        TimeView(componentSize: nil, timeComponentSize: largeComponentSize, hasSecondDivider: false, hasSecond: true, hasMiliSecond: false, hour: 10, minute: 58, second: 50, miliSecond: 0)
+        TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: true, hasSecond: true, hasMiliSecond: true, hour: 12, minute: 34, second: 56, miliSecond: 7, is24Hour: true)
+        TimeView(componentSize: nil, timeComponentSize: nil, hasSecondDivider: true, hasSecond: true, hasMiliSecond: true, hour: 12, minute: 34, second: 56, miliSecond: 7, is24Hour: false)
+        TimeView(componentSize: nil, timeComponentSize: largeComponentSize, hasSecondDivider: false, hasSecond: true, hasMiliSecond: false, hour: 22, minute: 58, second: 50, miliSecond: 0, is24Hour: true)
+        TimeView(componentSize: nil, timeComponentSize: largeComponentSize, hasSecondDivider: false, hasSecond: true, hasMiliSecond: false, hour: 22, minute: 58, second: 50, miliSecond: 0, is24Hour: false)
     }
 }

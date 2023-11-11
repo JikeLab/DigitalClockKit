@@ -38,7 +38,7 @@ struct ContentView: View {
                     HStack {
                         Text("Time")
                         Spacer()
-                        TimeView(componentSize: mediumComponentSize, timeComponentSize: nil, hasSecondDivider: true, hasSecond: true, hasMiliSecond: true, hour: hour, minute: minute, second: second, miliSecond: miliSecond)
+                        TimeView(componentSize: mediumComponentSize, timeComponentSize: nil, hasSecondDivider: true, hasSecond: true, hasMiliSecond: true, hour: hour, minute: minute, second: second, miliSecond: miliSecond, is24Hour: false)
                     }
                     HStack {
                         Text("Weekday")
@@ -79,7 +79,7 @@ struct ContentView: View {
                         ScrollView(.horizontal) {
                             LazyHStack(spacing: 0) {
                                 ForEach(Mode.allCases, id: \.self) { mode in
-                                    Watch1View(date: $currentDate, mode: mode)
+                                    Watch1View(date: $currentDate, mode: mode, is24Hour: false)
                                         .frame(width: 220)
                                 }
                             }
@@ -93,7 +93,7 @@ struct ContentView: View {
                         Spacer()
                         ScrollView(.horizontal) {
                             LazyHStack(spacing: 0) {
-                                Watch2View(date: $currentDate)
+                                Watch2View(date: $currentDate, is24Hour: true)
                                     .frame(width: 250)
                             }
                             .scrollTargetLayout()
